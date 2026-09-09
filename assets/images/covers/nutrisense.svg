@@ -20,26 +20,4 @@
   <rect x="218" y="110" width="3" height="34" rx="1.5" fill="#3c3c44"/>
   <rect x="372" y="96" width="3" height="44" rx="1.5" fill="#3c3c44"/>
 
-  <!-- teknoloji etiketleri -->
-  <g font-family="'Segoe UI',Inter,Arial,sans-serif">
-    <rect x="96" y="112" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
-    <circle cx="112" cy="125" r="6" fill="#052e16"/><path d="M109 125l2.2 2.2 4-4.6" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-    <text x="124" y="123" fill="#e3f2ea" font-size="6.6" font-weight="600">TensorFlow Lite</text>
-    <text x="124" y="132" fill="#6d8a7c" font-size="5.4">cihaz üstü model</text>
-
-    <rect x="96" y="150" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
-    <circle cx="112" cy="163" r="6" fill="#052e16"/><path d="M109.4 163h5.2M112 160.4v5.2" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round"/>
-    <text x="124" y="161" fill="#e3f2ea" font-size="6.6" font-weight="600">Flutter · Dart</text>
-    <text x="124" y="170" fill="#6d8a7c" font-size="5.4">erişilebilir arayüz</text>
-
-    <rect x="393" y="112" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
-    <circle cx="409" cy="125" r="6" fill="#052e16"/><path d="M406.4 125h5.2M409 122.4v5.2" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round"/>
-    <text x="421" y="123" fill="#e3f2ea" font-size="6.6" font-weight="600">FastAPI · Python</text>
-    <text x="421" y="132" fill="#6d8a7c" font-size="5.4">besin veri servisi</text>
-
-    <rect x="393" y="150" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
-    <circle cx="409" cy="163" r="6" fill="#052e16"/><path d="M406.6 163l2.2 2.2 4-4.6" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-    <text x="421" y="161" fill="#e3f2ea" font-size="6.6" font-weight="600">TÜBİTAK 2209-A</text>
-    <text x="421" y="170" fill="#6d8a7c" font-size="5.4">destekli araştırma</text>
-  </g>
 </svg>
