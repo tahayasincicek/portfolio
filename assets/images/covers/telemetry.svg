@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Uydu telemetri anomali tespiti panosu bir dizüstü ekranında: zaman serisi grafiği üzerinde işaretlenmiş anomali ve algılama günlüğü">
+  <defs>
+    <clipPath id="t-scr"><rect x="58" y="43" width="477" height="252"/></clipPath>
+    <linearGradient id="t-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.28"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="47" y="6" width="499" height="300" rx="15" fill="#1c1c20" stroke="#3c3c44"/>
+  <rect x="58" y="17" width="477" height="278" rx="5" fill="#0b0f17"/>
+  <path d="M58 22a5 5 0 0 1 5-5h467a5 5 0 0 1 5 5v21H58z" fill="#e8e9ed"/>
+  <circle cx="72" cy="30" r="2.6" fill="#ff5f56"/><circle cx="82" cy="30" r="2.6" fill="#ffbd2e"/><circle cx="92" cy="30" r="2.6" fill="#27c93f"/>
+  <rect x="176" y="24" width="220" height="13" rx="6.5" fill="#ffffff"/>
+  <circle cx="188" cy="30.5" r="2.4" fill="#38bdf8"/>
+  <text x="196" y="33.5" font-family="'Segoe UI',Inter,Arial,sans-serif" font-size="7.5" fill="#6b7280">telemetry-monitor.app</text>
+
+  <g clip-path="url(#t-scr)">
+    <rect x="58" y="43" width="477" height="252" fill="#0b0f17"/>
+    <g transform="translate(-9.76,12.02) scale(1.0328)" font-family="'Segoe UI',Inter,Arial,sans-serif">
+      <!-- top bar -->
+      <rect x="84" y="30" width="425" height="26" fill="#10151f"/>
+      <rect x="94" y="38" width="10" height="10" rx="2.5" fill="#38bdf8"/>
+      <text x="108" y="46.5" fill="#eef4fb" font-size="8.5" font-weight="700">Orbital Telemetry <tspan fill="#5b6474" font-weight="400">/ Anomaly Monitor</tspan></text>
+      <circle cx="452" cy="43" r="3" fill="#22c55e"/><text x="458" y="46" fill="#4ade80" font-size="6.5" font-weight="600">LIVE</text>
+      <text x="500" y="46" fill="#6b7385" font-size="6" text-anchor="end">14:02:11 UTC</text>
+
+      <!-- KPI tiles -->
+      <rect x="94" y="64" width="97" height="30" rx="6" fill="#141a26"/>
+      <text x="102" y="76" fill="#6b7385" font-size="5.5">SIGNAL STRENGTH</text>
+      <text x="102" y="88" fill="#e6ecf5" font-size="10" font-weight="700">92.4<tspan font-size="5.5" fill="#6b7385"> dB</tspan></text>
+      <text x="183" y="88" fill="#34d399" font-size="6" text-anchor="end">&#9650; 1.2</text>
+      <rect x="197" y="64" width="97" height="30" rx="6" fill="#141a26"/>
+      <text x="205" y="76" fill="#6b7385" font-size="5.5">CORE TEMP</text>
+      <text x="205" y="88" fill="#e6ecf5" font-size="10" font-weight="700">41.7<tspan font-size="5.5" fill="#6b7385"> &#176;C</tspan></text>
+      <text x="286" y="88" fill="#fbbf24" font-size="6" text-anchor="end">&#9650; 3.4</text>
+      <rect x="300" y="64" width="97" height="30" rx="6" fill="#1f1417" stroke="#ef4444" stroke-opacity="0.4"/>
+      <text x="308" y="76" fill="#f89a9a" font-size="5.5">ANOMALY SCORE</text>
+      <text x="308" y="88" fill="#f87171" font-size="10" font-weight="700">0.87</text>
+      <text x="389" y="88" fill="#f87171" font-size="6" text-anchor="end">HIGH</text>
+      <rect x="403" y="64" width="97" height="30" rx="6" fill="#141a26"/>
+      <text x="411" y="76" fill="#6b7385" font-size="5.5">DATA RATE</text>
+      <text x="411" y="88" fill="#e6ecf5" font-size="10" font-weight="700">1.24<tspan font-size="5.5" fill="#6b7385"> Gbps</tspan></text>
+
+      <!-- main chart panel -->
+      <rect x="94" y="100" width="406" height="98" rx="6" fill="#0f141e"/>
+      <text x="102" y="112" fill="#c7cfda" font-size="7" font-weight="600">Downlink Signal — last 24h</text>
+      <text x="492" y="112" fill="#6b7385" font-size="5.5" text-anchor="end">ML-AD v2.1</text>
+      <g stroke="#20293a" stroke-width="0.7">
+        <line x1="102" y1="130" x2="492" y2="130"/><line x1="102" y1="152" x2="492" y2="152"/><line x1="102" y1="174" x2="492" y2="174"/>
+      </g>
+      <line x1="102" y1="138" x2="492" y2="138" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+      <text x="106" y="136" fill="#fbbf24" font-size="5">threshold</text>
+      <rect x="368" y="120" width="42" height="70" fill="#ef4444" fill-opacity="0.12"/>
+      <path d="M102,168 116,162 130,169 144,158 158,166 172,160 186,168 200,156 214,164 228,160 242,169 256,162 270,168 284,160 298,166 312,161 326,168 340,159 354,166 368,162 380,126 389,118 397,134 406,152 420,165 434,161 448,168 462,159 476,166 490,161 L492,190 L102,190 Z" fill="url(#t-area)"/>
+      <path d="M102,168 116,162 130,169 144,158 158,166 172,160 186,168 200,156 214,164 228,160 242,169 256,162 270,168 284,160 298,166 312,161 326,168 340,159 354,166 368,162 380,126 389,118 397,134 406,152 420,165 434,161 448,168 462,159 476,166 490,161" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="389" cy="118" r="3.2" fill="#ef4444" stroke="#0f141e" stroke-width="1"/>
+      <rect x="360" y="104" width="58" height="12" rx="3" fill="#ef4444"/>
+      <text x="389" y="112.5" fill="#fff" font-size="6" font-weight="700" text-anchor="middle">ANOMALY</text>
+      <g fill="#5b6474" font-size="5"><text x="102" y="196">00:00</text><text x="200" y="196">06:00</text><text x="298" y="196">12:00</text><text x="396" y="196">18:00</text><text x="490" y="196" text-anchor="end">24:00</text></g>
+
+      <!-- detection log -->
+      <text x="94" y="214" fill="#c7cfda" font-size="7" font-weight="600">Detection Log</text>
+      <g font-size="6">
+        <rect x="94" y="220" width="406" height="15" rx="3" fill="#141a26"/>
+        <text x="102" y="230" fill="#8a93a5">14:02:11</text><text x="150" y="230" fill="#cfd6e2">ADS-01</text><text x="200" y="230" fill="#aeb6c4">Deviation from baseline (ML-AD)</text>
+        <rect x="470" y="223" width="24" height="9" rx="4.5" fill="#ef4444" fill-opacity="0.25"/><text x="482" y="229.5" fill="#f87171" font-size="5" font-weight="600" text-anchor="middle">HIGH</text>
+      </g>
+      <g font-size="6">
+        <rect x="94" y="238" width="406" height="15" rx="3" fill="#0f141e"/>
+        <text x="102" y="248" fill="#8a93a5">13:47:03</text><text x="150" y="248" fill="#cfd6e2">THM-04</text><text x="200" y="248" fill="#aeb6c4">Thermal drift detected</text>
+        <rect x="470" y="241" width="24" height="9" rx="4.5" fill="#f59e0b" fill-opacity="0.25"/><text x="482" y="247.5" fill="#fbbf24" font-size="5" font-weight="600" text-anchor="middle">MED</text>
+      </g>
+      <g font-size="6">
+        <rect x="94" y="256" width="406" height="15" rx="3" fill="#0f141e"/>
+        <text x="102" y="266" fill="#8a93a5">13:22:55</text><text x="150" y="266" fill="#cfd6e2">PWR-02</text><text x="200" y="266" fill="#aeb6c4">Power bus nominal</text>
+        <rect x="470" y="259" width="24" height="9" rx="4.5" fill="#22c55e" fill-opacity="0.25"/><text x="482" y="265.5" fill="#4ade80" font-size="5" font-weight="600" text-anchor="middle">OK</text>
+      </g>
+    </g>
+  </g>
+
+  <path d="M22 306h549l-12 15H34z" fill="#9b9da5"/>
+  <path d="M22 306h549l-2 3H24z" fill="#c3c5cc"/>
+  <rect x="272" y="306" width="49" height="5" rx="2.5" fill="#7c7e86"/>
+</svg>

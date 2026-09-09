@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Yorumlardan kalite tahmini NLP panosu bir dizüstü ekranında: duygu dağılımı halkası, karışıklık matrisi ve örnek tahminler">
+  <defs>
+    <clipPath id="q-scr"><rect x="58" y="43" width="477" height="252"/></clipPath>
+  </defs>
+
+  <rect x="47" y="6" width="499" height="300" rx="15" fill="#1c1c20" stroke="#3c3c44"/>
+  <rect x="58" y="17" width="477" height="278" rx="5" fill="#f6f7f9"/>
+  <path d="M58 22a5 5 0 0 1 5-5h467a5 5 0 0 1 5 5v21H58z" fill="#e8e9ed"/>
+  <circle cx="72" cy="30" r="2.6" fill="#ff5f56"/><circle cx="82" cy="30" r="2.6" fill="#ffbd2e"/><circle cx="92" cy="30" r="2.6" fill="#27c93f"/>
+  <rect x="176" y="24" width="220" height="13" rx="6.5" fill="#ffffff"/>
+  <circle cx="188" cy="30.5" r="2.4" fill="#7c3aed"/>
+  <text x="196" y="33.5" font-family="'Segoe UI',Inter,Arial,sans-serif" font-size="7.5" fill="#6b7280">review-quality.app</text>
+
+  <g clip-path="url(#q-scr)">
+    <rect x="58" y="43" width="477" height="252" fill="#f6f7f9"/>
+    <g transform="translate(-9.76,12.02) scale(1.0328)" font-family="'Segoe UI',Inter,Arial,sans-serif">
+      <!-- top bar -->
+      <rect x="84" y="30" width="425" height="26" fill="#ffffff"/><line x1="84" y1="56" x2="509" y2="56" stroke="#e6e8ee"/>
+      <rect x="94" y="38" width="11" height="11" rx="3" fill="#7c3aed"/>
+      <text x="110" y="47" fill="#111827" font-size="9.5" font-weight="700">Review Quality <tspan fill="#9aa0ae" font-weight="400">— NLP Pipeline</tspan></text>
+      <rect x="392" y="38" width="66" height="12" rx="6" fill="#f3e8ff"/><text x="425" y="46.5" fill="#7c3aed" font-size="6" font-weight="600" text-anchor="middle">BERT + TF-IDF</text>
+      <rect x="462" y="38" width="38" height="12" rx="6" fill="#dcfce7"/><text x="481" y="46.5" fill="#16a34a" font-size="6" font-weight="600" text-anchor="middle">3-class</text>
+
+      <!-- LEFT: metrics -->
+      <rect x="94" y="64" width="98" height="30" rx="6" fill="#fff" stroke="#e7ebf2"/>
+      <text x="102" y="76" fill="#6b7280" font-size="5.5">ACCURACY</text><text x="102" y="88" fill="#111827" font-size="11" font-weight="700">0.91</text>
+      <rect x="198" y="64" width="98" height="30" rx="6" fill="#fff" stroke="#e7ebf2"/>
+      <text x="206" y="76" fill="#6b7280" font-size="5.5">MACRO-F1</text><text x="206" y="88" fill="#111827" font-size="11" font-weight="700">0.89</text>
+
+      <!-- donut panel -->
+      <rect x="94" y="100" width="202" height="80" rx="7" fill="#fff" stroke="#e7ebf2"/>
+      <text x="102" y="114" fill="#111827" font-size="7" font-weight="700">Sentiment Distribution</text>
+      <g transform="rotate(-90 138 148)" fill="none" stroke-width="9">
+        <circle cx="138" cy="148" r="17" stroke="#eef0f4" stroke-width="9"/>
+        <circle cx="138" cy="148" r="17" stroke="#22c55e" stroke-dasharray="66.2 106.8" stroke-linecap="butt"/>
+        <circle cx="138" cy="148" r="17" stroke="#f59e0b" stroke-dasharray="24.6 106.8" stroke-dashoffset="-66.2"/>
+        <circle cx="138" cy="148" r="17" stroke="#ef4444" stroke-dasharray="16 106.8" stroke-dashoffset="-90.8"/>
+      </g>
+      <text x="138" y="151" fill="#111827" font-size="8" font-weight="700" text-anchor="middle">4.8k</text>
+      <g font-size="6">
+        <rect x="176" y="126" width="6" height="6" rx="1.5" fill="#22c55e"/><text x="186" y="131" fill="#374151">Positive</text><text x="288" y="131" fill="#6b7280" text-anchor="end" font-weight="600">62%</text>
+        <rect x="176" y="144" width="6" height="6" rx="1.5" fill="#f59e0b"/><text x="186" y="149" fill="#374151">Neutral</text><text x="288" y="149" fill="#6b7280" text-anchor="end" font-weight="600">23%</text>
+        <rect x="176" y="162" width="6" height="6" rx="1.5" fill="#ef4444"/><text x="186" y="167" fill="#374151">Negative</text><text x="288" y="167" fill="#6b7280" text-anchor="end" font-weight="600">15%</text>
+      </g>
+
+      <!-- confusion matrix -->
+      <rect x="94" y="186" width="202" height="82" rx="7" fill="#fff" stroke="#e7ebf2"/>
+      <text x="102" y="200" fill="#111827" font-size="7" font-weight="700">Confusion Matrix</text>
+      <g font-size="5" fill="#9aa0ae" text-anchor="middle">
+        <text x="146" y="212">Pos</text><text x="176" y="212">Neu</text><text x="206" y="212">Neg</text>
+      </g>
+      <g font-size="5" fill="#9aa0ae" text-anchor="end"><text x="128" y="228">Pos</text><text x="128" y="245">Neu</text><text x="128" y="262">Neg</text></g>
+      <g text-anchor="middle" font-size="6" font-weight="700">
+        <rect x="133" y="219" width="26" height="14" rx="2" fill="#166534"/><text x="146" y="229" fill="#fff">912</text>
+        <rect x="163" y="219" width="26" height="14" rx="2" fill="#ecfdf3"/><text x="176" y="229" fill="#4b5563">31</text>
+        <rect x="193" y="219" width="26" height="14" rx="2" fill="#f9fafb"/><text x="206" y="229" fill="#9aa0ae">12</text>
+        <rect x="133" y="236" width="26" height="14" rx="2" fill="#f9fafb"/><text x="146" y="246" fill="#9aa0ae">28</text>
+        <rect x="163" y="236" width="26" height="14" rx="2" fill="#92400e"/><text x="176" y="246" fill="#fff">340</text>
+        <rect x="193" y="236" width="26" height="14" rx="2" fill="#fffbeb"/><text x="206" y="246" fill="#4b5563">22</text>
+        <rect x="133" y="253" width="26" height="14" rx="2" fill="#f9fafb"/><text x="146" y="263" fill="#9aa0ae">9</text>
+        <rect x="163" y="253" width="26" height="14" rx="2" fill="#fef2f2"/><text x="176" y="263" fill="#4b5563">19</text>
+        <rect x="193" y="253" width="26" height="14" rx="2" fill="#991b1b"/><text x="206" y="263" fill="#fff">276</text>
+      </g>
+
+      <!-- RIGHT: sample predictions -->
+      <text x="304" y="76" fill="#111827" font-size="7.5" font-weight="700">Sample Predictions <tspan fill="#9aa0ae" font-weight="400">· LIME</tspan></text>
+      <rect x="304" y="82" width="197" height="56" rx="7" fill="#fff" stroke="#e7ebf2"/>
+      <text x="313" y="98" font-size="6.5" fill="#374151">&#8220;<tspan fill="#15803d" font-weight="700">Amazing</tspan> food and super <tspan fill="#15803d" font-weight="700">friendly</tspan></text>
+      <text x="313" y="108" font-size="6.5" fill="#374151">staff, definitely coming back!&#8221;</text>
+      <rect x="313" y="116" width="42" height="12" rx="6" fill="#dcfce7"/><text x="334" y="124.5" fill="#16a34a" font-size="6" font-weight="700" text-anchor="middle">Positive</text>
+      <text x="492" y="124.5" fill="#6b7280" font-size="6" text-anchor="end">conf 0.96</text>
+      <rect x="304" y="144" width="197" height="56" rx="7" fill="#fff" stroke="#e7ebf2"/>
+      <text x="313" y="160" font-size="6.5" fill="#374151">&#8220;Service was <tspan fill="#b45309" font-weight="700">slow</tspan> but the pasta</text>
+      <text x="313" y="170" font-size="6.5" fill="#374151">itself was actually decent.&#8221;</text>
+      <rect x="313" y="178" width="42" height="12" rx="6" fill="#fef3c7"/><text x="334" y="186.5" fill="#b45309" font-size="6" font-weight="700" text-anchor="middle">Neutral</text>
+      <text x="492" y="186.5" fill="#6b7280" font-size="6" text-anchor="end">conf 0.71</text>
+      <rect x="304" y="206" width="197" height="56" rx="7" fill="#fff" stroke="#e7ebf2"/>
+      <text x="313" y="222" font-size="6.5" fill="#374151">&#8220;<tspan fill="#b91c1c" font-weight="700">Cold</tspan> meal and a really <tspan fill="#b91c1c" font-weight="700">rude</tspan></text>
+      <text x="313" y="232" font-size="6.5" fill="#374151">waiter. Never coming again.&#8221;</text>
+      <rect x="313" y="240" width="46" height="12" rx="6" fill="#fee2e2"/><text x="336" y="248.5" fill="#b91c1c" font-size="6" font-weight="700" text-anchor="middle">Negative</text>
+      <text x="492" y="248.5" fill="#6b7280" font-size="6" text-anchor="end">conf 0.93</text>
+    </g>
+  </g>
+
+  <path d="M22 306h549l-12 15H34z" fill="#9b9da5"/>
+  <path d="M22 306h549l-2 3H24z" fill="#c3c5cc"/>
+  <rect x="272" y="306" width="49" height="5" rx="2.5" fill="#7c7e86"/>
+</svg>

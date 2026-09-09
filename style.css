@@ -1,0 +1,2109 @@
+/* ══════════════════════════════════════════════════════════════
+   PORTFOLIO — Figma: "Wilson Kinyua's Portfolio v2024 (Community)"
+   Landing Page / 1:2 — tokenlar doğrudan Figma dosyasından alındı.
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Renkler */
+    --bg: #f7f7f5;
+    /* Kartlar zeminden bir tık koyu kalsın diye surface de aşağı çekildi */
+    --surface: #ececea;
+    --accent: #2563eb;
+    /* accent zemin üzerindeki metin/ikon rengi (--text artık koyu) */
+    --on-accent: #ffffff;
+    --text: #111111;
+    --muted: rgba(17, 17, 17, 0.65);
+    --line: rgba(17, 17, 17, 0.12);
+
+    /* Biçim */
+    --radius: 10px;
+    /* Arka plan ızgarasının çizgi aralığı = animasyonun döngü mesafesi */
+    --bg-line-gap: 244px;
+    /* Figma 1440px için çizildi (içerik 1315px). Daha geniş ekranlarda
+       yanlarda kocaman boşluk kalmasın diye üst sınır yükseltildi. */
+    --container: 1560px;
+
+    /* Tipografi */
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-logo: 'Pacifico', cursive;
+    --font-card: 'Montserrat', var(--font);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+/* Lucide ikonları: stroke tabanlı */
+.sprite {
+    display: none;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Arka plandaki dikey ızgara (Figma: "Bg Lines")
+   Ayrı <span>'ler yerine tekrar eden gradient: desen periyodu sabit
+   olduğu için soldan sağa kayma dikişsiz döngü yapabiliyor. */
+.bg-lines {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    max-width: 1236px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.bg-lines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Sola bir periyot taşır: şerit sağa kayarken sol kenarda boşluk kalmasın */
+    left: calc(-1 * var(--bg-line-gap));
+    background-image: repeating-linear-gradient(to right,
+            rgba(17, 17, 17, 0.06) 0 1px,
+            transparent 1px var(--bg-line-gap));
+    animation: bg-lines-drift 16s linear infinite;
+    will-change: transform;
+}
+
+/* Tam bir periyot kayınca desen kendini tekrarlar — sıçrama görünmez */
+@keyframes bg-lines-drift {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(var(--bg-line-gap));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-lines::before {
+        animation: none;
+    }
+}
+
+main,
+.navbar,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Butonlar ─────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 67px;
+    padding: 0 28px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    color: var(--text);
+    cursor: pointer;
+    transition: background .25s, color .25s, border-color .25s, transform .25s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--accent);
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    height: 76px;
+    padding: 0 34px;
+}
+
+/* ── NAVBAR ───────────────────────────────────────────────── */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 26px 0;
+    background: rgba(247, 247, 245, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: padding .25s, border-color .25s, background .3s, backdrop-filter .3s;
+}
+
+/* Aşağı kayınca saydamlaşır. Tint neredeyse kalkıyor ama blur artıyor —
+   yoksa altından geçen içerik menü yazılarını okunmaz hale getirir. */
+.navbar.is-stuck {
+    background: rgba(247, 247, 245, 0.35);
+    backdrop-filter: blur(18px) saturate(140%);
+    padding: 14px 0;
+    border-bottom-color: var(--line);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    font-family: var(--font-logo);
+    font-size: 32px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.9vw, 28px);
+}
+
+/* Türkçe etiketler daha uzun — satır kaydırmasına izin verme */
+.nav-menu a {
+    font-size: clamp(14px, 1.25vw, 20px);
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--muted);
+    transition: color .25s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: none;
+}
+
+/* ── Dil değiştirici (TR / EN) ────────────────────────────── */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+    font: inherit;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .25s;
+}
+
+.lang-switch button:hover {
+    color: var(--text);
+}
+
+.lang-switch button.active {
+    color: var(--accent);
+}
+
+.lang-switch span {
+    color: var(--line);
+}
+
+.btn-hire {
+    height: 51px;
+    padding: 0 24px;
+    font-weight: 500;
+    flex: none;
+}
+
+.nav-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* ── Scroll reveal ────────────────────────────────────────────
+   .reveal sınıfını script.js ekler; JS kapalıysa hiçbir şey
+   gizlenmez. --reveal-delay ile kart ızgaraları sırayla gelir. */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity .7s cubic-bezier(.22, .68, .3, 1) var(--reveal-delay, 0ms),
+        transform .7s cubic-bezier(.22, .68, .3, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ── Ortak bölüm başlıkları ───────────────────────────────── */
+section {
+    padding: 100px 0;
+}
+
+.eyebrow {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.section-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 70px;
+}
+
+.section-title {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+}
+
+/* ── 1. HERO ──────────────────────────────────────────────── */
+/* Portre daireden ~40% yukarı taştığı için üstte o kadar yer bırakılmalı */
+.hero {
+    padding-top: clamp(40px, 4.5vw, 72px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Hero arka planı: akan kod + parıltı ──────────────────── */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    user-select: none;
+    /* Kenarlarda sert kesim olmasın, metnin arkası da temiz kalsın */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
+}
+
+/* Yumuşak mavi parıltı — çizimin arkasında derinlik bırakır */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(55% 50% at 72% 45%,
+            color-mix(in srgb, var(--accent) 14%, transparent),
+            transparent 70%);
+    animation: hero-glow 14s ease-in-out infinite alternate;
+}
+
+@keyframes hero-glow {
+    from {
+        transform: scale(1) translate(0, 0);
+    }
+
+    to {
+        transform: scale(1.18) translate(-3%, 2%);
+    }
+}
+
+.hero-code {
+    position: absolute;
+    inset: 0 0 auto 0;
+    padding: 0 40px;
+    animation: hero-code-scroll 55s linear infinite;
+    will-change: transform;
+}
+
+.hero-code pre {
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 2.1;
+    letter-spacing: 0.2px;
+    white-space: pre;
+    color: var(--accent);
+    opacity: .085;
+}
+
+/* İki kopya üst üste: %50 kaydırınca desen kendini tekrarlar */
+@keyframes hero-code-scroll {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-code,
+    .hero-bg::after {
+        animation: none;
+    }
+}
+
+/* Metin iki bloğa ayrıldı (intro / cta) ki mobilde fotoğraf
+   ikisinin ARASINA girebilsin. Masaüstünde ikisi de sol sütunda. */
+.hero-grid {
+    /* Akan kod katmanının üstünde kalsın */
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr clamp(420px, 34vw, 560px);
+    grid-template-areas:
+        "intro photo"
+        "cta   photo";
+    align-items: center;
+    column-gap: 70px;
+}
+
+.hero-intro {
+    grid-area: intro;
+}
+
+.hero-cta {
+    grid-area: cta;
+}
+
+/* Grid/flex item'ların varsayılan min-width:auto değeri, içerik
+   daralamadığında track'i viewport'tan geniş yapıyor. Sıfırlanmalı. */
+.hero-grid>*,
+.about-grid>*,
+.contact-grid>*,
+.project>*,
+.resume-cols>* {
+    min-width: 0;
+}
+
+.hero .eyebrow {
+    letter-spacing: 1.6px;
+    margin-bottom: 22px;
+}
+
+.hero-name {
+    font-size: clamp(38px, 4.6vw, 64px);
+    font-weight: 600;
+    letter-spacing: 5.12px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-role {
+    font-size: clamp(18px, 1.8vw, 24px);
+    letter-spacing: 1.92px;
+    color: var(--muted);
+    margin-bottom: 34px;
+}
+
+.hero-desc {
+    font-size: clamp(16px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+    line-height: 1.7;
+    max-width: 780px;
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.social-links {
+    display: flex;
+    gap: 19px;
+}
+
+.social-links a {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border-radius: var(--radius);
+    color: var(--accent);
+    transition: background .25s, color .25s, transform .25s;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+    transform: translateY(-3px);
+}
+
+.social-links-lg a {
+    width: 55px;
+    height: 55px;
+}
+
+/* Portre: accent halkalı daire (Figma 21:92) */
+.hero-photo {
+    grid-area: photo;
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    justify-self: end;
+    aspect-ratio: 1;
+    /* Grid item'ın otomatik minimum yüksekliği taşan portre yüzünden
+       aspect-ratio'yu ezip daireyi elipse çeviriyordu */
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* men1.png'nin zemini şeffaflaştırıldı ve çizgi accent rengine (#2563eb)
+   boyandı (alpha = koyuluk), böylece çizgi hangi zemin renginde olursa
+   olsun temiz duruyor.
+
+   "Çizilme" efekti MASKE ile yapılıyor, opak perde ile değil: perde
+   arkasındaki akan kod arka planını da örttüğü için beyaz kutu gibi
+   görünüyordu. Maskede açılmamış kısım şeffaf kalır, arka plan görünür.
+
+   Maske görselden 2.6 kat geniş; mask-position 100% = tamamen gizli,
+   0% = tamamen görünür. Varsayılan 0%, yani JS çalışmazsa görsel açık. */
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to right, #000 0 45%, transparent 60%);
+    mask-image: linear-gradient(to right, #000 0 45%, transparent 60%);
+    -webkit-mask-size: 260% 100%;
+    mask-size: 260% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+}
+
+/* is-visible'ı script.js'teki scroll observer ekleyip çıkarıyor, yani
+   hero her görünüme girdiğinde çizim baştan oynar. */
+.hero-photo.is-visible img {
+    animation: hero-draw 2.6s cubic-bezier(.65, 0, .35, 1) both;
+}
+
+@keyframes hero-draw {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+
+    to {
+        -webkit-mask-position: 0% 0;
+        mask-position: 0% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-photo.is-visible img {
+        animation: none;
+    }
+}
+
+/* ── 2. ABOUT ─────────────────────────────────────────────── */
+/* Fotoğraf kaldırıldı: metin tek sütunda, okunabilir genişlikte ortalanır */
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 80px;
+}
+
+.about-text {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-title {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 1.35;
+    margin-bottom: 26px;
+}
+
+.about-body {
+    font-size: clamp(16px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+    line-height: 2;
+    margin-bottom: 34px;
+}
+
+/* Genişleyen sütunda tek sıra madde çok seyrek kalıyordu — ikişerli */
+.about-text .check-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 46px;
+    text-align: left;
+}
+
+.check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    font-size: clamp(15px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+.check-list .icon {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+}
+
+/* ── 3. SERVICES ──────────────────────────────────────────── */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+}
+
+/* Figma 21:171 — 414×319, r10, #1e1e1e */
+.service-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 43px 30px 40px;
+    min-height: 319px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: transform .3s, border-color .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    color: var(--accent);
+    stroke-width: 1.6;
+    margin-bottom: 42px;
+}
+
+.service-card h3 {
+    font-family: var(--font-card);
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+}
+
+.service-card p {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* ── 4. RESUME (akordiyon) ────────────────────────────────── */
+.resume-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 68px;
+}
+
+.col-title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+/* Figma: her satır üstten çizgili, açık olan accent renkli */
+.acc-item {
+    position: relative;
+    border-top: 1px solid var(--line);
+    transition: border-color .3s;
+}
+
+.acc-item.is-open {
+    border-top-color: var(--accent);
+}
+
+.acc-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 70px 28px 14px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.acc-name {
+    font-size: clamp(18px, 1.8vw, 24px);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* Sağ kenardaki +/− düğmesi — Figma'da 55px, yarısı dışarı taşar */
+.acc-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    width: 55px;
+    height: 55px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .3s, color .3s;
+    color: var(--muted);
+}
+
+.acc-toggle::before,
+.acc-toggle::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    transition: transform .3s, opacity .3s;
+}
+
+.acc-toggle::before {
+    width: 15px;
+    height: 1.5px;
+}
+
+.acc-toggle::after {
+    width: 1.5px;
+    height: 15px;
+}
+
+.acc-item.is-open .acc-toggle {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.acc-item.is-open .acc-toggle::after {
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+.acc-panel {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .35s ease, opacity .25s ease;
+}
+
+.acc-item.is-open .acc-panel {
+    max-height: 480px;
+    opacity: 1;
+}
+
+.acc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 70px 14px 14px;
+    font-style: italic;
+    font-size: clamp(15px, 1.4vw, 20px);
+}
+
+.acc-role {
+    color: var(--text);
+}
+
+.acc-date {
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.acc-body {
+    padding: 0 70px 30px 14px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* ── 5. SKILLS ────────────────────────────────────────────── */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 70px 40px;
+}
+
+/* Figma 74:146 — 189×200, r10 */
+.skill-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    aspect-ratio: 189 / 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 20px;
+    border: 1px solid transparent;
+    transition: transform .3s, border-color .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+
+.skill-card img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+/* Açık fonda okunmayan logoları (Django gibi) koyuya çevirir */
+.skill-card img.mono {
+    filter: brightness(0);
+}
+
+.skill-card span {
+    font-size: clamp(15px, 1.4vw, 20px);
+    text-align: center;
+}
+
+/* ── 6. PROJECTS ──────────────────────────────────────────── */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Ters sıra: görsel sağda (Figma'da satırlar dönüşümlü) */
+.project:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Figma oranı: 616 / (616+586) ≈ %49 — sabit px yerine yüzde
+   kullanınca geniş ekranda da aynı oran korunuyor */
+.project-media {
+    flex: 0 1 49%;
+    min-width: 0;
+}
+
+.project-text {
+    flex: 1 1 47%;
+    min-width: 0;
+}
+
+/* Figma 77:276 — 616×421 kart, içinde 593×341 görsel */
+.project-media {
+    background: var(--surface);
+    align-self: center;
+    border-radius: var(--radius);
+    padding: 43px 11px 37px;
+    overflow: hidden;
+}
+
+.project-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 593 / 341;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 4px;
+    transition: transform .5s ease;
+}
+
+.project:hover .project-media img {
+    transform: scale(1.04);
+}
+
+.project-cat {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.project-desc {
+    font-size: clamp(16px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 586px;
+    margin-bottom: 34px;
+}
+
+/* Figma 77:272 + arrow-up-right — 75px daire */
+.project-link {
+    width: 75px;
+    height: 75px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--accent);
+    transition: background .3s, color .3s, border-color .3s;
+}
+
+.project-link .icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Birden fazla bağlantısı olan projeler (repo + canlı demo) */
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.project-link:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+}
+
+.projects-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+/* ── 7. CONTACT ───────────────────────────────────────────── */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.contact-title {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 1.35;
+    margin-bottom: 26px;
+}
+
+.contact-desc {
+    font-size: clamp(16px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 34px;
+}
+
+.contact-info .check-list {
+    margin-bottom: 44px;
+}
+
+/* Figma 79:336 — 397×81 alanlar, 845×148 mesaj kutusu */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 51px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: clamp(17px, 1.5vw, 20px);
+    letter-spacing: 0.6px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    height: 81px;
+    padding: 0 22px;
+    background: var(--surface);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    transition: border-color .25s;
+}
+
+.field textarea {
+    height: 148px;
+    padding: 22px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: rgba(17, 17, 17, 0.35);
+}
+
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.contact-form .btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+.form-status {
+    grid-column: 1 / -1;
+    font-size: 17px;
+    min-height: 0;
+}
+
+.form-status.ok {
+    color: #3ddc84;
+}
+
+.form-status.err {
+    color: var(--accent);
+}
+
+/* ── 8. FOOTER ────────────────────────────────────────────── */
+.footer {
+    position: relative;
+    margin-top: 60px;
+    padding: 46px 0;
+    background: var(--surface);
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.copyright {
+    font-size: clamp(15px, 1.4vw, 20px);
+    color: var(--muted);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(20px, 2.6vw, 40px);
+}
+
+.footer-links a {
+    font-size: clamp(15px, 1.4vw, 20px);
+    color: var(--muted);
+    transition: color .25s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Figma 79:389 — 93×93, footer'ın üstüne taşan buton */
+.scroll-up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 93px;
+    height: 93px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    border-radius: var(--radius);
+    color: var(--on-accent);
+    transition: transform .3s, background .3s;
+}
+
+.scroll-up .icon {
+    width: 53px;
+    height: 53px;
+    stroke-width: 1.6;
+}
+
+.scroll-up:hover {
+    transform: translate(-50%, -55%);
+    background: #1d4ed8;
+}
+
+/* ══ RESPONSIVE ══════════════════════════════════════════════ */
+@media (max-width: 1180px) {
+    .hero-grid {
+        grid-template-columns: 1fr 380px;
+        column-gap: 50px;
+    }
+
+    .hero-photo {
+        max-width: 380px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 26px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .resume-cols {
+        gap: 44px;
+    }
+}
+
+@media (max-width: 960px) {
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--surface);
+        border-radius: 0 0 var(--radius) var(--radius);
+        padding: 8px 0;
+        display: none;
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 14px 26px;
+        font-size: 18px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Dar ekranda "Hire Me" gider, dil seçici kalır */
+    .btn-hire {
+        display: none;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .resume-cols {
+        grid-template-columns: 1fr;
+    }
+
+    /* Dar ekranda kod katmanı metinle çakışıyor; parıltı kalsın */
+    .hero-code {
+        display: none;
+    }
+
+    /* Dar ekranda ikişerli madde listesi sığmıyor */
+    .about-text .check-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    /* Dikey dizilimde fotoğraf metin ile butonların ARASINA girer */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "intro"
+            "photo"
+            "cta";
+        row-gap: 36px;
+    }
+
+    .hero-photo {
+        width: min(400px, 100%);
+        max-width: 400px;
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+    .resume-cols {
+        gap: 60px;
+    }
+
+    /* Masaüstünde düğme sütunun yarısı kadar dışarı taşar; dar
+       ekranda bu sayfayı yatay kaydırılabilir yapıyor, içeri al */
+    .acc-toggle {
+        transform: translate(0, -50%);
+    }
+
+    .project,
+    .project:nth-child(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    /* Dikey dizilimde flex-basis genişliğe değil YÜKSEKLİĞE uygulanır;
+       616/586px değerleri kartları devasa yapıyordu */
+    .project-media,
+    .project-text {
+        flex: none;
+    }
+
+    .project-list {
+        gap: 70px;
+    }
+
+    .projects-more {
+        margin-top: 60px;
+    }
+}
+
+/* ══ MOBİL ═══════════════════════════════════════════════════
+   Tasarım 1440px için çizildi; buradaki değerler masaüstünden
+   ölçeklenmiş değil, telefon için ayrıca belirlendi.
+   Form alanları 16px'in altına inmez — iOS aksi halde odaklanınca
+   sayfayı otomatik yakınlaştırır.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 620px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 56px 0;
+    }
+
+    /* Mobilde de aksın. 244px aralık dar ekranda 1-2 çizgi bırakıyordu,
+       bu yüzden periyot daraltıldı — gradient ve kayma mesafesi aynı
+       değişkene bağlı olduğu için döngü dikişsiz kalıyor. */
+    .bg-lines {
+        --bg-line-gap: 96px;
+    }
+
+    .bg-lines::before {
+        animation-duration: 8s;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar.is-stuck {
+        padding: 8px 0;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .lang-switch {
+        font-size: 15px;
+    }
+
+    .nav-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nav-menu {
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+    }
+
+    .nav-menu a {
+        padding: 15px 20px;
+        font-size: 17px;
+    }
+
+    /* ── Ortak başlıklar ── */
+    .eyebrow {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .section-head {
+        margin-bottom: 36px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        letter-spacing: .6px;
+    }
+
+    /* ── Butonlar ── */
+    .btn {
+        height: 52px;
+        padding: 0 20px;
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .btn-lg {
+        height: 56px;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 100%;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .hero-grid {
+        gap: 36px;
+    }
+
+    .hero-name {
+        font-size: 32px;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+    }
+
+    .hero-role {
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 22px;
+    }
+
+    .hero-desc {
+        font-size: 15px;
+        line-height: 1.65;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        gap: 12px;
+    }
+
+    .social-links a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .social-links a .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ── About ── */
+    .about-grid {
+        gap: 34px;
+    }
+
+    .about-title,
+    .contact-title {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    .about-body {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+    }
+
+    .check-list li {
+        gap: 14px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .check-list .icon {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+    }
+
+    /* ── Services ── */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        min-height: 0;
+        padding: 28px 22px;
+    }
+
+    .service-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .service-card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* ── Resume ── */
+    .resume-cols {
+        gap: 44px;
+    }
+
+    .col-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .acc-head {
+        padding: 20px 46px 20px 4px;
+    }
+
+    .acc-name {
+        font-size: 17px;
+    }
+
+    .acc-meta {
+        padding: 0 46px 10px 4px;
+        font-size: 14px;
+    }
+
+    .acc-body {
+        padding: 0 46px 22px 4px;
+        font-size: 14px;
+    }
+
+    .acc-toggle {
+        width: 40px;
+        height: 40px;
+        transform: translate(0, -50%);
+    }
+
+    .acc-toggle::before {
+        width: 12px;
+    }
+
+    .acc-toggle::after {
+        height: 12px;
+    }
+
+    /* ── Skills ── */
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .skill-card {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .skill-card img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .skill-card span {
+        font-size: 13px;
+    }
+
+    /* ── Projects ── */
+    .project-list {
+        gap: 48px;
+    }
+
+    .project-media {
+        padding: 14px 10px;
+    }
+
+    .project-cat {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .project-title {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .project-desc {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .project-link {
+        width: 56px;
+        height: 56px;
+    }
+
+    .project-links {
+        gap: 12px;
+    }
+
+    .project-link .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .projects-more {
+        margin-top: 44px;
+    }
+
+    /* ── Contact ── */
+    .contact-grid {
+        gap: 40px;
+    }
+
+    .contact-desc {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+    }
+
+    .contact-info .check-list {
+        margin-bottom: 30px;
+    }
+
+    .social-links-lg a {
+        width: 46px;
+        height: 46px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .field {
+        gap: 8px;
+    }
+
+    .field label {
+        font-size: 15px;
+    }
+
+    .field input {
+        height: 54px;
+        padding: 0 16px;
+        font-size: 16px;
+    }
+
+    .field textarea {
+        height: 130px;
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .form-status {
+        font-size: 14px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+        margin-top: 40px;
+        padding: 34px 0 28px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .copyright,
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .footer-links {
+        gap: 16px;
+    }
+
+    .scroll-up {
+        width: 56px;
+        height: 56px;
+    }
+
+    .scroll-up .icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ══ BÜYÜK EKRANLAR ══════════════════════════════════════════
+   Tasarım 1440px için çizildi. Ekran büyüdüğünde sadece kabı
+   genişletmek yetmiyor; yazılar ve bileşenler sabit px olduğu
+   için içerik ortada küçük bir ada gibi kalıyordu. Burada
+   tipografi ve bileşen boyutları da birlikte büyütülüyor.
+
+   Metin blokları kendi max-width'leriyle sınırlı: satır uzunluğu
+   ~90 karakteri geçince okunabilirlik düşüyor, o yüzden paragraflar
+   ekranın tamamına yayılmıyor — bunun yerine punto büyüyor.
+   ═══════════════════════════════════════════════════════════ */
+@media (min-width: 1700px) {
+    :root {
+        --container: 2200px;
+    }
+
+    .container {
+        padding: 0 60px;
+    }
+
+    section {
+        padding: 130px 0;
+    }
+
+    .bg-lines {
+        max-width: 1900px;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+        padding: 32px 0;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .nav-menu {
+        gap: 36px;
+    }
+
+    .nav-menu a {
+        font-size: 24px;
+    }
+
+    .lang-switch {
+        font-size: 19px;
+    }
+
+    .btn-hire {
+        height: 62px;
+        padding: 0 30px;
+        font-size: 24px;
+    }
+
+    /* ── Butonlar ── */
+    .btn {
+        height: 80px;
+        padding: 0 36px;
+        font-size: 24px;
+        gap: 14px;
+    }
+
+    .btn-lg {
+        height: 90px;
+        padding: 0 44px;
+    }
+
+    .btn .icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* ── Ortak başlıklar ── */
+    .eyebrow {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .section-head {
+        max-width: 980px;
+        margin-bottom: 90px;
+    }
+
+    .section-title {
+        font-size: 52px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        padding-top: 64px;
+    }
+
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 700px;
+        column-gap: 100px;
+    }
+
+    .hero-photo {
+        max-width: 700px;
+    }
+
+    .hero-name {
+        font-size: 82px;
+        letter-spacing: 6px;
+    }
+
+    .hero-role {
+        font-size: 30px;
+        margin-bottom: 44px;
+    }
+
+    .hero-desc {
+        font-size: 25px;
+        max-width: 900px;
+        margin-bottom: 52px;
+    }
+
+    .hero-actions {
+        gap: 24px;
+        margin-bottom: 58px;
+    }
+
+    .social-links {
+        gap: 24px;
+    }
+
+    .social-links a {
+        width: 58px;
+        height: 58px;
+    }
+
+    .social-links a .icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* ── About ── */
+    .about-text {
+        max-width: 1350px;
+    }
+
+    .about-title,
+    .contact-title {
+        font-size: 52px;
+        margin-bottom: 36px;
+    }
+
+    .about-body {
+        font-size: 25px;
+        max-width: 1100px;
+        margin-bottom: 46px;
+    }
+
+    .check-list li {
+        font-size: 24px;
+        gap: 28px;
+        margin-bottom: 18px;
+    }
+
+    .check-list .icon {
+        width: 26px;
+        height: 26px;
+        margin-top: 10px;
+    }
+
+    /* ── Services ── */
+    .service-grid {
+        gap: 60px;
+    }
+
+    .service-card {
+        padding: 56px 44px;
+        min-height: 400px;
+    }
+
+    .service-icon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 52px;
+    }
+
+    .service-card h3 {
+        font-size: 26px;
+        margin-bottom: 32px;
+    }
+
+    .service-card p {
+        font-size: 23px;
+    }
+
+    /* ── Resume ── */
+    .resume-cols {
+        gap: 100px;
+    }
+
+    .col-title {
+        font-size: 40px;
+        margin-bottom: 46px;
+    }
+
+    .acc-head {
+        padding: 36px 100px 36px 20px;
+    }
+
+    .acc-name {
+        font-size: 32px;
+    }
+
+    .acc-meta {
+        font-size: 25px;
+        padding: 0 100px 20px 20px;
+    }
+
+    .acc-body {
+        font-size: 21px;
+        padding: 0 100px 40px 20px;
+    }
+
+    .acc-panel {
+        max-height: 620px;
+    }
+
+    .acc-toggle {
+        width: 74px;
+        height: 74px;
+    }
+
+    .acc-toggle::before {
+        width: 20px;
+    }
+
+    .acc-toggle::after {
+        height: 20px;
+    }
+
+    /* ── Skills ── */
+    .skill-grid {
+        gap: 90px 52px;
+    }
+
+    .skill-card {
+        gap: 30px;
+    }
+
+    .skill-card img {
+        width: 92px;
+        height: 92px;
+    }
+
+    .skill-card span {
+        font-size: 25px;
+    }
+
+    /* ── Projects ── */
+    .project-list {
+        gap: 150px;
+    }
+
+    .project {
+        gap: 90px;
+    }
+
+    .project-cat {
+        font-size: 25px;
+        margin-bottom: 18px;
+    }
+
+    .project-title {
+        font-size: 52px;
+        margin-bottom: 34px;
+    }
+
+    .project-desc {
+        font-size: 25px;
+        max-width: 900px;
+        margin-bottom: 48px;
+    }
+
+    .project-link {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-link .icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .projects-more {
+        margin-top: 130px;
+    }
+
+    /* ── Contact ── */
+    .contact-grid {
+        grid-template-columns: 560px minmax(0, 1fr);
+        gap: 130px;
+    }
+
+    .contact-desc {
+        font-size: 25px;
+        margin-bottom: 46px;
+    }
+
+    .social-links-lg a {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-form {
+        gap: 40px 66px;
+    }
+
+    .field label {
+        font-size: 25px;
+    }
+
+    .field input {
+        height: 104px;
+        padding: 0 28px;
+        font-size: 23px;
+    }
+
+    .field textarea {
+        height: 200px;
+        padding: 28px;
+        font-size: 23px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+        padding: 60px 0;
+    }
+
+    .copyright,
+    .footer-links a {
+        font-size: 24px;
+    }
+
+    .footer-links {
+        gap: 52px;
+    }
+
+    .scroll-up {
+        width: 120px;
+        height: 120px;
+    }
+
+    .scroll-up .icon {
+        width: 66px;
+        height: 66px;
+    }
+}
+
+/* ── 4K ve üzeri ── */
+@media (min-width: 2560px) {
+    :root {
+        --container: 2800px;
+    }
+
+    .container {
+        padding: 0 80px;
+    }
+
+    section {
+        padding: 170px 0;
+    }
+
+    .bg-lines {
+        max-width: 2400px;
+    }
+
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 820px;
+    }
+
+    .hero-photo {
+        max-width: 820px;
+    }
+
+    .hero-name {
+        font-size: 96px;
+    }
+
+    .hero-role {
+        font-size: 34px;
+    }
+
+    .section-title,
+    .about-title,
+    .contact-title,
+    .project-title {
+        font-size: 62px;
+    }
+
+    .hero-desc,
+    .about-body,
+    .project-desc,
+    .contact-desc {
+        font-size: 28px;
+        max-width: 1150px;
+    }
+
+    .about-text {
+        max-width: 1600px;
+    }
+
+    .check-list li,
+    .field label,
+    .copyright,
+    .footer-links a {
+        font-size: 27px;
+    }
+
+    .service-card {
+        min-height: 460px;
+        padding: 64px 52px;
+    }
+
+    .service-card p {
+        font-size: 25px;
+    }
+
+    .skill-card img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .skill-card span {
+        font-size: 27px;
+    }
+}

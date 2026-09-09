@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Görme engelliler için sağlıklı beslenme mobil uygulaması: kamera ile besin tanıma, sesli geri bildirim ve günlük kalori takibi">
+  <defs>
+    <clipPath id="n-scr"><rect x="228" y="26" width="137" height="289" rx="14"/></clipPath>
+    <linearGradient id="n-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+  </defs>
+
+  <!-- phone body -->
+  <rect x="221" y="19" width="151" height="303" rx="22" fill="#1c1c20" stroke="#3c3c44"/>
+  <rect x="228" y="26" width="137" height="289" rx="14" fill="#0b1210"/>
+
+  <g clip-path="url(#n-scr)">
+    <!-- status bar -->
+    <g font-family="'Segoe UI',Inter,Arial,sans-serif">
+      <text x="240" y="41" fill="#9fb3a8" font-size="7" font-weight="600">09:41</text>
+      <rect x="336" y="35" width="14" height="7" rx="2" fill="#3a4a42"/><rect x="336" y="35" width="10" height="7" rx="2" fill="#4ade80"/>
+      <circle cx="326" cy="38.5" r="2.4" fill="#3a4a42"/>
+
+      <!-- app header -->
+      <text x="240" y="60" fill="#eafaf1" font-size="11" font-weight="700">NutriSense</text>
+      <text x="240" y="71" fill="#6d8a7c" font-size="6.2">Sesli besin asistanı</text>
+      <circle cx="352" cy="60" r="9" fill="#14532d"/>
+      <path d="M352 55.5a2.4 2.4 0 0 1 2.4 2.4v3a2.4 2.4 0 0 1-4.8 0v-3a2.4 2.4 0 0 1 2.4-2.4z" fill="#4ade80"/>
+      <path d="M348.4 60.6a3.6 3.6 0 0 0 7.2 0M352 64.2v2.2" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+
+      <!-- camera viewfinder -->
+      <rect x="240" y="80" width="113" height="82" rx="9" fill="#101c17" stroke="#1d3329"/>
+      <circle cx="279" cy="120" r="20" fill="#b45309"/><circle cx="279" cy="120" r="20" fill="#f59e0b" opacity=".55"/>
+      <circle cx="272" cy="114" r="4.2" fill="#fde68a" opacity=".7"/>
+      <ellipse cx="311" cy="128" rx="17" ry="10" fill="#166534"/><ellipse cx="311" cy="126" rx="12" ry="6.5" fill="#22c55e" opacity=".8"/>
+      <path d="M246 88h9M246 88v9M347 88h-9M347 88v9M246 154h9M246 154v-9M347 154h-9M347 154v-9" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <rect x="256" y="100" width="46" height="42" rx="5" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <rect x="256" y="90" width="58" height="10" rx="5" fill="#052e16"/>
+      <text x="261" y="97.4" fill="#4ade80" font-size="5.6" font-weight="600">Elma  %96</text>
+
+      <!-- voice feedback bar -->
+      <rect x="240" y="169" width="113" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
+      <g fill="#4ade80">
+        <rect x="249" y="180" width="2" height="5" rx="1"/><rect x="254" y="176" width="2" height="13" rx="1"/>
+        <rect x="259" y="172" width="2" height="21" rx="1"/><rect x="264" y="177" width="2" height="11" rx="1"/>
+        <rect x="269" y="174" width="2" height="17" rx="1"/><rect x="274" y="179" width="2" height="7" rx="1"/>
+      </g>
+      <text x="284" y="185" fill="#a7c8b6" font-size="6">"Bir orta boy elma, 95 kcal"</text>
+
+      <!-- calorie ring -->
+      <rect x="240" y="202" width="113" height="60" rx="9" fill="#12211b"/>
+      <text x="249" y="216" fill="#c8ded3" font-size="6.8" font-weight="600">Günlük Kalori</text>
+      <circle cx="270" cy="238" r="16" fill="none" stroke="#1e3a2c" stroke-width="6"/>
+      <circle cx="270" cy="238" r="16" fill="none" stroke="url(#n-ring)" stroke-width="6" stroke-linecap="round"
+              stroke-dasharray="70 101" transform="rotate(-90 270 238)"/>
+      <text x="270" y="238" fill="#eafaf1" font-size="8" font-weight="700" text-anchor="middle">70%</text>
+      <text x="270" y="246" fill="#6d8a7c" font-size="5" text-anchor="middle">1470 kcal</text>
+      <g font-size="5.6">
+        <text x="296" y="228" fill="#9fb3a8">Protein</text><rect x="296" y="231" width="48" height="3.4" rx="1.7" fill="#1e3a2c"/><rect x="296" y="231" width="31" height="3.4" rx="1.7" fill="#22c55e"/>
+        <text x="296" y="244" fill="#9fb3a8">Karbonhidrat</text><rect x="296" y="247" width="48" height="3.4" rx="1.7" fill="#1e3a2c"/><rect x="296" y="247" width="39" height="3.4" rx="1.7" fill="#84cc16"/>
+        <text x="296" y="260" fill="#9fb3a8">Yağ</text><rect x="296" y="263" width="48" height="3.4" rx="1.7" fill="#1e3a2c"/><rect x="296" y="263" width="18" height="3.4" rx="1.7" fill="#f59e0b"/>
+      </g>
+
+      <!-- scan button -->
+      <rect x="240" y="270" width="113" height="24" rx="12" fill="#22c55e"/>
+      <circle cx="264" cy="282" r="5.4" fill="none" stroke="#052e16" stroke-width="1.6"/>
+      <text x="277" y="285" fill="#052e16" font-size="8" font-weight="700">Besini Tara</text>
+      <text x="296" y="308" fill="#4a6357" font-size="5.4" text-anchor="middle">TalkBack &amp; VoiceOver uyumlu</text>
+    </g>
+  </g>
+
+  <!-- notch + side keys -->
+  <rect x="278" y="22" width="37" height="6" rx="3" fill="#1c1c20"/>
+  <rect x="218" y="80" width="3" height="22" rx="1.5" fill="#3c3c44"/>
+  <rect x="218" y="110" width="3" height="34" rx="1.5" fill="#3c3c44"/>
+  <rect x="372" y="96" width="3" height="44" rx="1.5" fill="#3c3c44"/>
+
+  <!-- floating tags -->
+  <g font-family="'Segoe UI',Inter,Arial,sans-serif">
+    <rect x="96" y="112" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
+    <circle cx="112" cy="125" r="6" fill="#052e16"/><path d="M109 125l2.2 2.2 4-4.6" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <text x="124" y="123" fill="#e3f2ea" font-size="6.6" font-weight="600">TensorFlow Lite</text>
+    <text x="124" y="132" fill="#6d8a7c" font-size="5.4">cihaz üstü model</text>
+
+    <rect x="96" y="150" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
+    <circle cx="112" cy="163" r="6" fill="#052e16"/><path d="M109.4 163h5.2M112 160.4v5.2" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="124" y="161" fill="#e3f2ea" font-size="6.6" font-weight="600">Flutter · Dart</text>
+    <text x="124" y="170" fill="#6d8a7c" font-size="5.4">erişilebilir arayüz</text>
+
+    <rect x="393" y="112" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
+    <circle cx="409" cy="125" r="6" fill="#052e16"/><path d="M406.4 125h5.2M409 122.4v5.2" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="421" y="123" fill="#e3f2ea" font-size="6.6" font-weight="600">FastAPI · Python</text>
+    <text x="421" y="132" fill="#6d8a7c" font-size="5.4">besin veri servisi</text>
+
+    <rect x="393" y="150" width="104" height="26" rx="8" fill="#12211b" stroke="#1d3329"/>
+    <circle cx="409" cy="163" r="6" fill="#052e16"/><path d="M406.6 163l2.2 2.2 4-4.6" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <text x="421" y="161" fill="#e3f2ea" font-size="6.6" font-weight="600">TÜBİTAK 2209-A</text>
+    <text x="421" y="170" fill="#6d8a7c" font-size="5.4">destekli araştırma</text>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Dosya saklama ve yedekleme konsolu bir dizüstü ekranında: depolama kullanımı, yedekleme işleri ve terminal günlüğü">
+  <defs>
+    <clipPath id="b-scr"><rect x="58" y="43" width="477" height="252"/></clipPath>
+  </defs>
+
+  <rect x="47" y="6" width="499" height="300" rx="15" fill="#1c1c20" stroke="#3c3c44"/>
+  <rect x="58" y="17" width="477" height="278" rx="5" fill="#0d1117"/>
+  <path d="M58 22a5 5 0 0 1 5-5h467a5 5 0 0 1 5 5v21H58z" fill="#e8e9ed"/>
+  <circle cx="72" cy="30" r="2.6" fill="#ff5f56"/><circle cx="82" cy="30" r="2.6" fill="#ffbd2e"/><circle cx="92" cy="30" r="2.6" fill="#27c93f"/>
+  <rect x="176" y="24" width="220" height="13" rx="6.5" fill="#ffffff"/>
+  <circle cx="188" cy="30.5" r="2.4" fill="#22c55e"/>
+  <text x="196" y="33.5" font-family="'Segoe UI',Inter,Arial,sans-serif" font-size="7.5" fill="#6b7280">backup-console.local</text>
+
+  <g clip-path="url(#b-scr)">
+    <rect x="58" y="43" width="477" height="252" fill="#0d1117"/>
+    <g transform="translate(-9.76,12.02) scale(1.0328)" font-family="'Segoe UI',Inter,Arial,sans-serif">
+      <!-- top bar -->
+      <rect x="84" y="30" width="425" height="26" fill="#111722"/>
+      <rect x="94" y="38" width="11" height="11" rx="3" fill="#22c55e"/>
+      <text x="110" y="47" fill="#e8edf4" font-size="9.5" font-weight="700">Backup Console <tspan fill="#5b6473" font-weight="400">/ vault-02</tspan></text>
+      <circle cx="446" cy="43" r="3" fill="#22c55e"/><text x="452" y="46" fill="#4ade80" font-size="6.5" font-weight="600">All systems healthy</text>
+
+      <!-- KPI tiles -->
+      <rect x="94" y="64" width="97" height="30" rx="6" fill="#151b26"/>
+      <text x="102" y="76" fill="#6b7385" font-size="5.5">STORAGE USED</text><text x="102" y="88" fill="#e6ecf5" font-size="10" font-weight="700">3.2<tspan font-size="5.5" fill="#6b7385"> / 5 TB</tspan></text>
+      <rect x="197" y="64" width="97" height="30" rx="6" fill="#151b26"/>
+      <text x="205" y="76" fill="#6b7385" font-size="5.5">FILES</text><text x="205" y="88" fill="#e6ecf5" font-size="10" font-weight="700">128,430</text>
+      <rect x="300" y="64" width="97" height="30" rx="6" fill="#151b26"/>
+      <text x="308" y="76" fill="#6b7385" font-size="5.5">LAST BACKUP</text><text x="308" y="88" fill="#e6ecf5" font-size="10" font-weight="700">12<tspan font-size="5.5" fill="#6b7385"> min ago</tspan></text>
+      <rect x="403" y="64" width="97" height="30" rx="6" fill="#151b26"/>
+      <text x="411" y="76" fill="#6b7385" font-size="5.5">SUCCESS RATE</text><text x="411" y="88" fill="#4ade80" font-size="10" font-weight="700">99.98%</text>
+
+      <!-- storage usage panel -->
+      <rect x="94" y="100" width="202" height="62" rx="6" fill="#121824"/>
+      <text x="102" y="113" fill="#c7cfda" font-size="7" font-weight="600">Storage Usage</text>
+      <text x="288" y="113" fill="#6b7385" font-size="5.5" text-anchor="end">64% of 5 TB</text>
+      <rect x="102" y="120" width="186" height="10" rx="5" fill="#1e2735"/>
+      <rect x="102" y="120" width="34" height="10" rx="5" fill="#3b82f6"/>
+      <rect x="136" y="120" width="52" height="10" fill="#8b5cf6"/>
+      <rect x="188" y="120" width="24" height="10" fill="#22c55e"/>
+      <rect x="212" y="120" width="12" height="10" fill="#f59e0b"/>
+      <g font-size="5.5">
+        <rect x="102" y="140" width="6" height="6" rx="1.5" fill="#3b82f6"/><text x="112" y="145" fill="#9aa3b2">Docs 0.9T</text>
+        <rect x="158" y="140" width="6" height="6" rx="1.5" fill="#8b5cf6"/><text x="168" y="145" fill="#9aa3b2">Media 1.4T</text>
+        <rect x="224" y="140" width="6" height="6" rx="1.5" fill="#22c55e"/><text x="234" y="145" fill="#9aa3b2">DB 0.6T</text>
+        <rect x="102" y="150" width="6" height="6" rx="1.5" fill="#f59e0b"/><text x="112" y="155" fill="#9aa3b2">System 0.3T</text>
+      </g>
+
+      <!-- backup jobs -->
+      <rect x="94" y="166" width="202" height="102" rx="6" fill="#121824"/>
+      <text x="102" y="179" fill="#c7cfda" font-size="7" font-weight="600">Backup Jobs</text>
+      <g font-size="6">
+        <text x="102" y="196" fill="#e2e7ee" font-weight="600">Daily Incremental</text>
+        <rect x="240" y="189" width="48" height="10" rx="5" fill="#14532d"/><text x="264" y="196.3" fill="#4ade80" font-size="5.5" text-anchor="middle">Completed</text>
+        <text x="102" y="216" fill="#e2e7ee" font-weight="600">Weekly Full</text>
+        <rect x="150" y="211" width="90" height="4" rx="2" fill="#1e2735"/><rect x="150" y="211" width="58" height="4" rx="2" fill="#3b82f6"/>
+        <rect x="240" y="209" width="48" height="10" rx="5" fill="#1e3a5f"/><text x="264" y="216.3" fill="#60a5fa" font-size="5.5" text-anchor="middle">64% Running</text>
+        <text x="102" y="236" fill="#e2e7ee" font-weight="600">DB Dump (pg)</text>
+        <rect x="240" y="229" width="48" height="10" rx="5" fill="#2a2f3a"/><text x="264" y="236.3" fill="#9aa3b2" font-size="5.5" text-anchor="middle">03:00 sched</text>
+        <text x="102" y="256" fill="#e2e7ee" font-weight="600">Media Archive</text>
+        <rect x="240" y="249" width="48" height="10" rx="5" fill="#14532d"/><text x="264" y="256.3" fill="#4ade80" font-size="5.5" text-anchor="middle">Completed</text>
+      </g>
+
+      <!-- terminal panel -->
+      <rect x="304" y="100" width="197" height="168" rx="6" fill="#0a0e15" stroke="#1c2431"/>
+      <circle cx="314" cy="110" r="2.4" fill="#ff5f56"/><circle cx="323" cy="110" r="2.4" fill="#ffbd2e"/><circle cx="332" cy="110" r="2.4" fill="#27c93f"/>
+      <text x="492" y="112.5" fill="#4b5563" font-size="5.5" text-anchor="end">backup.log</text>
+      <line x1="304" y1="118" x2="501" y2="118" stroke="#1c2431"/>
+      <g font-family="'Cascadia Code','Consolas',monospace" font-size="6">
+        <text x="312" y="132" fill="#7ee787">$ <tspan fill="#e6edf3">backup run --incremental</tspan></text>
+        <text x="312" y="146" fill="#8b949e">[12:04:02] scanning 128,430 files</text>
+        <text x="312" y="160" fill="#8b949e">[12:04:09] delta <tspan fill="#f0b429">2,184</tspan> changed</text>
+        <text x="312" y="174" fill="#8b949e">[12:04:31] encrypting AES-256 <tspan fill="#3fb950">&#10003;</tspan></text>
+        <text x="312" y="188" fill="#8b949e">[12:04:58] compressing zstd&#8230;</text>
+        <text x="312" y="202" fill="#8b949e">[12:05:12] upload 3.2 GB &#8594; vault-02</text>
+        <text x="312" y="216" fill="#8b949e">[12:05:12] verify checksum <tspan fill="#3fb950">&#10003;</tspan></text>
+        <text x="312" y="230" fill="#58a6ff">[12:05:13] snapshot #4821 committed</text>
+        <text x="312" y="244" fill="#3fb950">&#10003; backup completed in 71s</text>
+        <text x="312" y="258" fill="#7ee787">$ <tspan fill="#e6edf3">_</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <path d="M22 306h549l-12 15H34z" fill="#9b9da5"/>
+  <path d="M22 306h549l-2 3H24z" fill="#c3c5cc"/>
+  <rect x="272" y="306" width="49" height="5" rx="2.5" fill="#7c7e86"/>
+</svg>

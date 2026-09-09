@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Regresyon modeliyle konut fiyat tahmini arayüzü">
+    <defs>
+        <clipPath id="h-scr"><rect x="58" y="43" width="477" height="252" /></clipPath>
+        <clipPath id="h-img"><rect x="88" y="104" width="156" height="88" rx="6" /></clipPath>
+    </defs>
+
+    <!-- ── laptop gövdesi ── -->
+    <rect x="47" y="6" width="499" height="300" rx="15" fill="#1c1c20" stroke="#3c3c44" />
+    <rect x="58" y="17" width="477" height="278" rx="5" fill="#ffffff" />
+
+    <!-- tarayıcı çubuğu -->
+    <path d="M58 22a5 5 0 0 1 5-5h467a5 5 0 0 1 5 5v21H58z" fill="#e8e9ed" />
+    <g fill="#b9bcc4">
+        <path d="M84 27.5l-5 5 5 5v-10z" /><path d="M100 27.5l5 5-5 5v-10z" />
+    </g>
+    <rect x="196" y="24" width="200" height="14" rx="7" fill="#ffffff" />
+    <circle cx="208" cy="31" r="3" fill="#9aa0aa" />
+    <rect x="217" y="29" width="84" height="4" rx="2" fill="#b9bcc4" />
+    <g fill="#b9bcc4">
+        <rect x="470" y="29" width="12" height="4" rx="2" /><rect x="492" y="29" width="12" height="4" rx="2" />
+    </g>
+
+    <!-- ── ekran içeriği ── -->
+    <g clip-path="url(#h-scr)">
+        <rect x="58" y="43" width="477" height="252" fill="#f4f5f8" />
+
+        <!-- başlık -->
+        <rect x="76" y="58" width="104" height="9" rx="4.5" fill="#2c2f36" />
+        <rect x="76" y="74" width="62" height="5" rx="2.5" fill="#b9bcc4" />
+        <rect x="446" y="56" width="72" height="18" rx="6" fill="#ffffff" />
+        <circle cx="459" cy="65" r="4" fill="#2563eb" />
+        <rect x="468" y="63" width="38" height="4" rx="2" fill="#8a8f99" />
+
+        <!-- konut kartı -->
+        <rect x="76" y="92" width="180" height="186" rx="8" fill="#ffffff" />
+        <rect x="88" y="104" width="156" height="88" rx="6" fill="#f4f5f8" />
+        <g clip-path="url(#h-img)">
+            <!-- ev -->
+            <path d="M166 122l52 34H114z" fill="#2563eb" fill-opacity=".85" />
+            <rect x="132" y="156" width="68" height="36" fill="#ffffff" stroke="#dcdfe6" />
+            <rect x="140" y="164" width="14" height="13" rx="2" fill="#c9ccd4" />
+            <rect x="178" y="164" width="14" height="13" rx="2" fill="#c9ccd4" />
+            <rect x="158" y="170" width="16" height="22" rx="2" fill="#2563eb" fill-opacity=".3" />
+            <!-- zemin -->
+            <rect x="88" y="188" width="156" height="4" fill="#e6e8ec" />
+        </g>
+
+        <!-- özellik satırları -->
+        <rect x="88" y="208" width="46" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="196" y="207" width="36" height="5" rx="2.5" fill="#4a4f59" />
+        <rect x="88" y="226" width="54" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="204" y="225" width="28" height="5" rx="2.5" fill="#4a4f59" />
+        <rect x="88" y="242" width="156" height="1" fill="#eef0f4" />
+
+        <!-- tahmini fiyat -->
+        <rect x="88" y="252" width="42" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="88" y="262" width="88" height="11" rx="5.5" fill="#2563eb" />
+
+        <!-- regresyon kartı -->
+        <rect x="272" y="92" width="246" height="186" rx="8" fill="#ffffff" />
+        <rect x="286" y="106" width="68" height="5" rx="2.5" fill="#8a8f99" />
+        <circle cx="470" cy="109" r="4" fill="#2563eb" />
+        <rect x="480" y="107" width="24" height="4" rx="2" fill="#b9bcc4" />
+
+        <!-- ızgara -->
+        <g stroke="#eef0f4">
+            <path d="M286 156h218M286 190h218M286 224h218" />
+        </g>
+
+        <!-- güven bandı -->
+        <path d="M290 259 500 151 500 133 290 241z" fill="#2563eb" fill-opacity=".1" />
+        <!-- regresyon doğrusu -->
+        <path d="M290 250 500 142" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" />
+
+        <!-- veri noktaları -->
+        <g fill="#2c2f36" fill-opacity=".22">
+            <circle cx="302" cy="250" r="3.5" /><circle cx="302" cy="236" r="3.5" />
+            <circle cx="320" cy="242" r="3.5" /><circle cx="320" cy="228" r="3.5" />
+            <circle cx="338" cy="232" r="3.5" /><circle cx="338" cy="218" r="3.5" />
+            <circle cx="356" cy="224" r="3.5" /><circle cx="356" cy="208" r="3.5" />
+            <circle cx="374" cy="214" r="3.5" /><circle cx="392" cy="206" r="3.5" />
+            <circle cx="392" cy="190" r="3.5" /><circle cx="410" cy="196" r="3.5" />
+            <circle cx="448" cy="176" r="3.5" /><circle cx="466" cy="168" r="3.5" />
+            <circle cx="466" cy="152" r="3.5" /><circle cx="484" cy="158" r="3.5" />
+        </g>
+
+        <!-- tahmin noktası -->
+        <path d="M430 178V262M430 178H286" fill="none" stroke="#2563eb" stroke-opacity=".4"
+            stroke-dasharray="4 5" />
+        <circle cx="430" cy="178" r="11" fill="#2563eb" fill-opacity=".14" />
+        <circle cx="430" cy="178" r="5.5" fill="#ffffff" stroke="#2563eb" stroke-width="2.5" />
+
+        <!-- taban ekseni -->
+        <rect x="286" y="262" width="218" height="1" fill="#e6e8ec" />
+        <g fill="#e6e8ec">
+            <rect x="290" y="268" width="16" height="4" rx="2" />
+            <rect x="334" y="268" width="16" height="4" rx="2" />
+            <rect x="378" y="268" width="16" height="4" rx="2" />
+            <rect x="422" y="268" width="16" height="4" rx="2" />
+            <rect x="466" y="268" width="16" height="4" rx="2" />
+        </g>
+    </g>
+
+    <!-- ── taban ── -->
+    <path d="M22 306h549l-12 15H34z" fill="#9b9da5" />
+    <path d="M22 306h549l-2 3H24z" fill="#c3c5cc" />
+    <rect x="272" y="306" width="49" height="5" rx="2.5" fill="#7c7e86" />
+</svg>

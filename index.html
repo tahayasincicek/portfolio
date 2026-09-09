@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha Yasin Çiçek | Software Engineer</title>
+    <meta name="description"
+        content="Taha Yasin Çiçek — Software Engineer & Machine Learning. Portföy, projeler ve iletişim.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@900&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ══ SVG ikon seti (Lucide) — Figma'daki ikonlarla aynı set ══ -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <symbol id="i-github" viewBox="0 0 24 24">
+                <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </symbol>
+            <symbol id="i-linkedin" viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+            </symbol>
+            <symbol id="i-check-circle" viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+            </symbol>
+            <symbol id="i-arrow-up-right" viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+            </symbol>
+            <symbol id="i-chevron-right" viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+            </symbol>
+            <symbol id="i-chevrons-up" viewBox="0 0 24 24">
+                <polyline points="17 11 12 6 7 11" />
+                <polyline points="17 18 12 13 7 18" />
+            </symbol>
+            <symbol id="i-code" viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+            </symbol>
+            <symbol id="i-cpu" viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+            </symbol>
+            <symbol id="i-database" viewBox="0 0 24 24">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </symbol>
+            <symbol id="i-layers" viewBox="0 0 24 24">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+            </symbol>
+            <symbol id="i-users" viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </symbol>
+            <symbol id="i-download" viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </symbol>
+            <symbol id="i-x" viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </symbol>
+            <symbol id="i-send" viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Arka plandaki dikey ızgara çizgileri (Figma: "Bg Lines") -->
+    <!-- Çizgiler CSS'te repeating-linear-gradient ile çiziliyor -->
+    <div class="bg-lines" aria-hidden="true"></div>
+
+    <!-- ══ NAVBAR ══ -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="logo" href="#home"><span>T</span>aha <span>Y</span>asin <span>Çiçek</span></a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="active" data-i18n="nav.home">Ana Sayfa</a>
+                <a href="#about" data-i18n="nav.about">Hakkımda</a>
+                <a href="#services" data-i18n="nav.services">Çalışma Alanlarım</a>
+                <a href="#resume" data-i18n="nav.resume">Özgeçmiş</a>
+                <a href="#skills" data-i18n="nav.skills">Yetenekler</a>
+                <a href="#projects" data-i18n="nav.projects">Projeler</a>
+                <a href="#contact" data-i18n="nav.contact">İletişim</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" class="active" aria-pressed="true">TR</button>
+                    <span aria-hidden="true">/</span>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <a href="#contact" class="btn btn-primary btn-hire" data-i18n="nav.hire">İletişime Geç</a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ══ 1. HERO ══ -->
+        <section id="home" class="hero">
+            <!-- Dekoratif arka plan: sonsuz döngüde akan kod + yumuşak parıltı.
+                 İki <pre> birebir aynı; -50% kaydırınca kopyanın üstüne
+                 oturduğu için döngü dikişsiz olur. -->
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-code">
+                    <pre>class MLPipeline:
+    def __init__(self, model, scaler):
+        self.model = model
+        self.scaler = scaler
+
+    def fit(self, X, y):
+        Xs = self.scaler.fit_transform(X)
+        self.model.fit(Xs, y)
+        return self
+
+    def predict(self, X):
+        return self.model.predict(self.scaler.transform(X))
+
+
+public async Task&lt;IActionResult&gt; GetProjects(int page = 1)
+{
+    var items = await _db.Projects
+        .Where(p =&gt; p.IsPublished)
+        .OrderByDescending(p =&gt; p.CreatedAt)
+        .Skip((page - 1) * PageSize)
+        .Take(PageSize)
+        .ToListAsync();
+
+    return Ok(new { items, page });
+}
+
+
+export function useDebounce(value, delay = 300) {
+  const [debounced, setDebounced] = useState(value);
+
+  useEffect(() =&gt; {
+    const id = setTimeout(() =&gt; setDebounced(value), delay);
+    return () =&gt; clearTimeout(id);
+  }, [value, delay]);
+
+  return debounced;
+}
+
+
+SELECT d.name, COUNT(*) AS total, AVG(t.duration) AS avg_time
+FROM tasks t
+JOIN departments d ON d.id = t.department_id
+WHERE t.created_at &gt;= NOW() - INTERVAL '30 days'
+GROUP BY d.name
+ORDER BY total DESC;
+
+
+docker compose up -d --build
+pytest -q --cov=src --cov-report=term-missing
+git commit -m "feat: add anomaly detection endpoint"
+</pre>
+                    <pre>class MLPipeline:
+    def __init__(self, model, scaler):
+        self.model = model
+        self.scaler = scaler
+
+    def fit(self, X, y):
+        Xs = self.scaler.fit_transform(X)
+        self.model.fit(Xs, y)
+        return self
+
+    def predict(self, X):
+        return self.model.predict(self.scaler.transform(X))
+
+
+public async Task&lt;IActionResult&gt; GetProjects(int page = 1)
+{
+    var items = await _db.Projects
+        .Where(p =&gt; p.IsPublished)
+        .OrderByDescending(p =&gt; p.CreatedAt)
+        .Skip((page - 1) * PageSize)
+        .Take(PageSize)
+        .ToListAsync();
+
+    return Ok(new { items, page });
+}
+
+
+export function useDebounce(value, delay = 300) {
+  const [debounced, setDebounced] = useState(value);
+
+  useEffect(() =&gt; {
+    const id = setTimeout(() =&gt; setDebounced(value), delay);
+    return () =&gt; clearTimeout(id);
+  }, [value, delay]);
+
+  return debounced;
+}
+
+
+SELECT d.name, COUNT(*) AS total, AVG(t.duration) AS avg_time
+FROM tasks t
+JOIN departments d ON d.id = t.department_id
+WHERE t.created_at &gt;= NOW() - INTERVAL '30 days'
+GROUP BY d.name
+ORDER BY total DESC;
+
+
+docker compose up -d --build
+pytest -q --cov=src --cov-report=term-missing
+git commit -m "feat: add anomaly detection endpoint"
+</pre>
+                </div>
+            </div>
+
+            <div class="container hero-grid">
+                <div class="hero-intro">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">MERHABA, BEN</p>
+                    <h1 class="hero-name"><span class="accent">Taha Yasin</span> Çiçek</h1>
+                    <p class="hero-role" data-i18n="hero.role">Yazılım Mühendisi</p>
+                    <p class="hero-desc" data-i18n="hero.desc">
+                        Tutkulu bir geliştirici ve makine öğrenmesi meraklısıyım. Dinamik web projelerinin ve veri
+                        odaklı uygulamaların geliştirme sürecinin tamamında deneyim sahibiyim; kullanıcı
+                        ihtiyaçlarıyla sağlam mühendisliği dengeleyen ürünler geliştiriyorum.
+                    </p>
+                </div>
+
+                <figure class="hero-photo">
+                    <img src="assets/images/men1.png" alt="Taha Yasin Çiçek">
+                </figure>
+
+                <!-- Mobilde bu blok fotoğrafın ALTINA düşer (bkz. grid-template-areas) -->
+                <div class="hero-cta">
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.contact">Bana Ulaş</a>
+                    </div>
+
+                    <ul class="social-links">
+                        <li><a href="https://github.com/tahayasincicek" target="_blank" rel="noopener"
+                                aria-label="GitHub"><svg class="icon">
+                                    <use href="#i-github" />
+                                </svg></a></li>
+                        <li><a href="https://linkedin.com/in/taha-yasin-%C3%A7i%C3%A7ek-887b0927b" target="_blank"
+                                rel="noopener" aria-label="LinkedIn"><svg class="icon">
+                                    <use href="#i-linkedin" />
+                                </svg></a>
+                        </li>
+                        <li><a href="mailto:cicektahayasin46@gmail.com" aria-label="E-mail"><svg class="icon">
+                                    <use href="#i-mail" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 2. ABOUT ══ -->
+        <section id="about" class="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <p class="eyebrow" data-i18n="about.eyebrow">Hakkımda</p>
+                    <h2 class="about-title" data-i18n="about.title" data-i18n-html><span class="accent">Azimli,</span>
+                        yenilikçi<br>Yazılım <span class="accent">Mühendisi</span></h2>
+                    <p class="about-body" data-i18n="about.body">
+                        Kocaeli Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim. Yazılım geliştirme
+                        süreçlerinde Full-Stack (frontend &amp; backend) yetkinliklerine sahibim; aynı zamanda makine
+                        öğrenmesi ve derin öğrenme alanlarında projeler geliştirerek veri odaklı akıllı çözümler
+                        üretme konusunda deneyim kazandım. Analitik düşünen, çözüm odaklı ve sürekli öğrenmeye
+                        istekli bir geliştiriciyim.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="about.c1">Full-Stack web
+                                geliştirme ve REST API (React, Node.js, ASP.NET Core, Django)</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="about.c2">Makine
+                                öğrenmesi ve derin öğrenme: sınıflandırma, regresyon, anomali tespiti</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="about.c3">Veri işleme
+                                ve analiz pipeline'ları (Pandas, NumPy, SQL)</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="about.c4">Mobil ve
+                                bilgisayarlı görü uygulamaları (Flutter, TensorFlow Lite, OpenCV)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 3. SERVICES ══ -->
+        <section id="services" class="services">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="services.eyebrow">Üzerinde çalışmayı sevdiğim konular</p>
+                    <h2 class="section-title" data-i18n="services.title" data-i18n-html>Geliştirme Yaptığım<br>Başlıca
+                        <span class="accent">Alanlar</span>
+                    </h2>
+                </header>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <svg class="icon service-icon">
+                            <use href="#i-code" />
+                        </svg>
+                        <h3 data-i18n="services.s1.t">Web Geliştirme</h3>
+                        <p data-i18n="services.s1.d">Backend'den arayüze uçtan uca web uygulamaları geliştiriyorum;
+                            React, Node.js ve ASP.NET Core ile çalışıyorum.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <svg class="icon service-icon">
+                            <use href="#i-cpu" />
+                        </svg>
+                        <h3 data-i18n="services.s2.t">Makine Öğrenmesi</h3>
+                        <p data-i18n="services.s2.d">Veriden değer üreten modeller üzerinde çalışıyorum: tahminleme,
+                            sınıflandırma ve anomali tespiti.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <svg class="icon service-icon">
+                            <use href="#i-database" />
+                        </svg>
+                        <h3 data-i18n="services.s3.t">Veri Analizi</h3>
+                        <p data-i18n="services.s3.d">Veri toplama, temizleme ve analiz pipeline'ları kuruyor, ham
+                            veriyi anlamlı bilgiye dönüştürüyorum.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 4. RESUME ══ -->
+        <section id="resume" class="resume">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="resume.eyebrow" data-i18n-html><span class="accent">Özgeçmişim</span>
+                    </p>
+                    <h2 class="section-title" data-i18n="resume.title" data-i18n-html>Gerçek <span
+                            class="accent">Problem Çözümleri</span><br>Deneyimi</h2>
+                </header>
+
+                <!--
+                  ⚠️  KÖŞELİ PARANTEZLİ ALANLAR YER TUTUCU.
+                      Metinleri i18n.js içindeki "resume.*" anahtarlarından düzenle
+                      (TR ve EN olmak üzere iki yerde).
+                      Fazla satırı silmek için buradaki <div class="acc-item"> bloğunu kaldır.
+                -->
+                <div class="resume-cols">
+                    <!-- ── Eğitim ── -->
+                    <div class="resume-col">
+                        <h3 class="col-title" data-i18n="resume.edu">Eğitim</h3>
+
+                        <div class="acc-item is-open">
+                            <button class="acc-head" aria-expanded="true">
+                                <span class="acc-name" data-i18n="resume.e1.name">KOCAELİ ÜNİVERSİTESİ</span>
+                                <span class="acc-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <div class="acc-meta">
+                                    <span class="acc-role" data-i18n="resume.e1.role">Yazılım Mühendisliği (Lisans) —
+                                        GANO: 3,27 / 4,00</span>
+                                    <span class="acc-date" data-i18n="resume.e1.date" data-i18n-html>2023 - <span
+                                            class="accent">2026</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-head" aria-expanded="false">
+                                <span class="acc-name" data-i18n="resume.e2.name">KIRKLARELİ ÜNİVERSİTESİ</span>
+                                <span class="acc-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <div class="acc-meta">
+                                    <span class="acc-role" data-i18n="resume.e2.role">Yazılım Mühendisliği
+                                        (Lisans)</span>
+                                    <span class="acc-date" data-i18n="resume.e2.date" data-i18n-html>2022 - 2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-head" aria-expanded="false">
+                                <span class="acc-name" data-i18n="resume.e3.name">KURSLAR & SERTİFİKALAR</span>
+                                <span class="acc-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <div class="acc-meta">
+                                    <span class="acc-role" data-i18n="resume.e3.role">AkademIQ · BTK Akademi · Avrupa
+                                        Dil Okulları</span>
+                                    <span class="acc-date" data-i18n="resume.e3.date" data-i18n-html>Sertifika</span>
+                                </div>
+                                <p class="acc-body" data-i18n="resume.e3.body">.NET &amp; React Full Stack Geliştirme
+                                    (AkademIQ AI Business School), Makine Öğrenmesi (BTK Akademi), Algoritma ve Veri
+                                    Yapıları İleri Seviye (BTK Akademi), B2 Seviye İngilizce Sertifikası (Kırklareli
+                                    Avrupa Dil Okulları).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Deneyim ── -->
+                    <div class="resume-col">
+                        <h3 class="col-title" data-i18n="resume.exp">Deneyim</h3>
+
+                        <div class="acc-item is-open">
+                            <button class="acc-head" aria-expanded="true">
+                                <span class="acc-name" data-i18n="resume.x1.name">BİRLEŞİK YAZILIM HİZMETLERİ</span>
+                                <span class="acc-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <div class="acc-meta">
+                                    <span class="acc-role" data-i18n="resume.x1.role">Yazılım Mühendisliği
+                                        Stajyeri</span>
+                                    <span class="acc-date" data-i18n="resume.x1.date" data-i18n-html>10.08.2026 - <span
+                                            class="accent">Devam Ediyor</span></span>
+                                </div>
+                                <p class="acc-body" data-i18n="resume.x1.body">Birleşik Yazılım Hizmetleri Ltd. Şti.
+                                    bünyesinde yazılım mühendisliği stajyeri olarak görev alıyorum. Kurumsal yazılım
+                                    geliştirme süreçlerinde ekiple birlikte çalışıyor, uçtan uca geliştirme
+                                    pratiklerini gerçek bir üretim ortamında deneyimliyorum.</p>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <button class="acc-head" aria-expanded="false">
+                                <span class="acc-name" data-i18n="resume.x2.name">ARGEDE BİLİŞİM TEKNOLOJİLERİ</span>
+                                <span class="acc-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <div class="acc-meta">
+                                    <span class="acc-role" data-i18n="resume.x2.role">Frontend Yazılım Geliştirme
+                                        Stajyeri</span>
+                                    <span class="acc-date" data-i18n="resume.x2.date" data-i18n-html>04.08.2025 -
+                                        29.08.2025</span>
+                                </div>
+                                <p class="acc-body" data-i18n="resume.x2.body">Argede Bilişim Teknolojileri Sanayi ve
+                                    Ticaret Ltd. Şti. bünyesinde frontend geliştirme ekibinde yer aldım. Modern web
+                                    teknolojileriyle arayüz geliştirme, bileşen tabanlı mimari ve responsive tasarım
+                                    üzerine çalışarak gerçek bir ürün geliştirme sürecinde deneyim kazandım.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 5. SKILLS ══ -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="skills.eyebrow">Yeteneklerim</p>
+                    <h2 class="section-title" data-i18n="skills.title" data-i18n-html>profesyonel <span
+                            class="accent">beceriler</span></h2>
+                </header>
+
+                <div class="skill-grid">
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                            alt=""><span>Python</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                            alt=""><span>JavaScript</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                            alt=""><span>TypeScript</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                            alt=""><span>C#</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                            alt=""><span>C++</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+                            alt=""><span>.NET</span></div>
+
+                    <div class="skill-card"><img class="mono"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+                            alt=""><span>Django</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                            alt=""><span>React</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                            alt=""><span>Node.js</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+                            alt=""><span>Flutter</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                            alt=""><span>PostgreSQL</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                            alt=""><span>MSSQL</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt=""><span>MySQL</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                            alt=""><span>Docker</span></div>
+
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                            alt=""><span>Git</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
+                            alt=""><span>TensorFlow</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+                            alt=""><span>NumPy</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+                            alt=""><span>OpenCV</span></div>
+                    <div class="skill-card"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                            alt=""><span>Figma</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 6. PROJECTS ══ -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="projects.eyebrow">Son Çalışmalar</p>
+                    <h2 class="section-title" data-i18n="projects.title" data-i18n-html>Popüler <span
+                            class="accent">Projelerimi</span> Keşfet</h2>
+                </header>
+
+                <!--
+                  GÖRSELLER: assets/images/covers/ içindeki SVG kapaklar, her projenin
+                  konusunu anlatan çizimler (gerçek ekran görüntüsü değil).
+                  Projenin kendi ekran görüntüsünü koymak istersen src'yi değiştirmen yeterli.
+                -->
+                <div class="project-list">
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/telemetry.svg"
+                                alt="Uydu telemetri verisinde anomali tespiti"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p1.cat">Makine Öğrenmesi</p>
+                            <h3 class="project-title" data-i18n="projects.p1.title">Uydu Telemetri Anomali Tespiti</h3>
+                            <p class="project-desc" data-i18n="projects.p1.desc">TUSAŞ LIFT UP programı kapsamında,
+                                Avrupa Uzay Ajansı (ESA) OPS-SAT uydusunun telemetri veri setleri üzerinde makine
+                                öğrenmesi yöntemleriyle anomalileri otomatik tespit eden sistem.</p>
+                            <a class="project-link"
+                                href="https://github.com/tahayasincicek/Uydu-Telemetri-Anomali-Tespiti" target="_blank"
+                                rel="noopener" aria-label="Uydu Telemetri Anomali Tespiti — GitHub">
+                                <svg class="icon">
+                                    <use href="#i-github" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/nutrisense.svg"
+                                alt="Görme engelliler için sesli besin tanıma ve kalori takibi mobil uygulaması"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p2.cat">Mobil &amp; Derin Öğrenme</p>
+                            <h3 class="project-title" data-i18n="projects.p2.title">NutriSense — Görme Engelliler İçin
+                                Beslenme Asistanı</h3>
+                            <p class="project-desc" data-i18n="projects.p2.desc">TÜBİTAK 2209-A destekli araştırma
+                                projesi. Flutter ve Dart ile geliştirilen, Python/FastAPI tabanlı backend ve TensorFlow
+                                Lite modeliyle görme engelli bireylerin besinleri tanımasına, sesli geri bildirim
+                                almasına ve günlük kalori takibi yapmasına yardımcı olan erişilebilir mobil uygulama.
+                            </p>
+                            <a class="project-link" href="https://github.com/tahayasincicek/NutriSense" target="_blank"
+                                rel="noopener" aria-label="NutriSense — GitHub">
+                                <svg class="icon">
+                                    <use href="#i-github" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/kanban.svg"
+                                alt="Sürükle bırak destekli Kanban görev panosu"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p3.cat">Full-Stack Web</p>
+                            <h3 class="project-title" data-i18n="projects.p3.title">Task Manager REST API</h3>
+                            <p class="project-desc" data-i18n="projects.p3.desc">Node.js (Express) ve TypeScript
+                                backend, React arayüz. Görev takibi, raporlama, rol bazlı yetkilendirme ve kapsamlı
+                                test altyapısı sunan modern bir Kanban uygulaması.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/tahayasincicek/Task-Manager"
+                                    target="_blank" rel="noopener" aria-label="Task Manager — GitHub">
+                                    <svg class="icon">
+                                        <use href="#i-github" />
+                                    </svg>
+                                </a>
+                                <a class="project-link" href="https://task-manager-theta-hazel-72.vercel.app/"
+                                    target="_blank" rel="noopener" aria-label="Task Manager — Canlı Demo">
+                                    <svg class="icon">
+                                        <use href="#i-arrow-up-right" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/market.svg"
+                                alt="Ürün, stok ve satış yönetimi yapan market otomasyon paneli"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p4.cat">Web Uygulaması</p>
+                            <h3 class="project-title" data-i18n="projects.p4.title">Market Otomasyon Sistemi</h3>
+                            <p class="project-desc" data-i18n="projects.p4.desc">ASP.NET Core MVC, Dapper ve SQL Server
+                                ile geliştirilen katmanlı mimariye sahip otomasyon. Ürün, kategori, stok ve satış
+                                süreçlerinin uçtan uca yönetimini sağlar.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/tahayasincicek/MarketOtomasyon"
+                                    target="_blank" rel="noopener" aria-label="Market Otomasyon Sistemi — GitHub">
+                                    <svg class="icon">
+                                        <use href="#i-github" />
+                                    </svg>
+                                </a>
+                                <a class="project-link" href="https://marketotomasyon.onrender.com/" target="_blank"
+                                    rel="noopener" aria-label="Market Otomasyon Sistemi — Canlı Demo">
+                                    <svg class="icon">
+                                        <use href="#i-arrow-up-right" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/department.svg"
+                                alt="Ders programı, rol yetkilendirme ve sınav oturma düzeni ekranı"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p5.cat">Full-Stack Web</p>
+                            <h3 class="project-title" data-i18n="projects.p5.title">Üniversite Bölüm Yönetim Sistemi
+                            </h3>
+                            <p class="project-desc" data-i18n="projects.p5.desc">Node.js backend ve React frontend
+                                mimarisiyle geliştirilen, ders ve sınav programlarının yönetildiği rol bazlı
+                                yetkilendirme sistemine sahip web uygulaması. Çakışma kontrolü ve otomatik sınav oturma
+                                düzeni üretimi içerir.</p>
+                            <a class="project-link"
+                                href="https://github.com/tahayasincicek/Department-Management-System" target="_blank"
+                                rel="noopener" aria-label="Üniversite Bölüm Yönetim Sistemi — GitHub">
+                                <svg class="icon">
+                                    <use href="#i-github" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/quality.svg"
+                                alt="Restoran yorumlarından metin madenciliği ile kalite tahmini"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p6.cat">Doğal Dil İşleme</p>
+                            <h3 class="project-title" data-i18n="projects.p6.title">Yorumlardan Kalite Tahmini</h3>
+                            <p class="project-desc" data-i18n="projects.p6.desc">Yelp restoran yorumları üzerinde metin
+                                madenciliği ile müşteri deneyimini üç sınıfa ayıran NLP boru hattı. TF-IDF ve BERT
+                                tabanlı modelleri, yön-bazlı duygu analizini ve LIME ile açıklanabilirliği kapsar.</p>
+                            <a class="project-link"
+                                href="https://github.com/tahayasincicek/Quality-Estimation-from-Restaurant-Reviews"
+                                target="_blank" rel="noopener" aria-label="Yorumlardan Kalite Tahmini — GitHub">
+                                <svg class="icon">
+                                    <use href="#i-github" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project-media"><img src="assets/images/covers/backup.svg"
+                                alt="Dosya saklama ve periyodik yedekleme sistemi"></figure>
+                        <div class="project-text">
+                            <p class="project-cat" data-i18n="projects.p7.cat">Backend / Sistem</p>
+                            <h3 class="project-title" data-i18n="projects.p7.title">File Storage &amp; Backup System
+                            </h3>
+                            <p class="project-desc" data-i18n="projects.p7.desc">Veri güvenliğini ön planda tutarak
+                                sistem dosyalarının saklanmasını ve düzenli periyotlarla yedeklenmesini sağlayan arka
+                                plan mimarisi. Python ve modern backend prensipleriyle geliştirildi.</p>
+                            <a class="project-link"
+                                href="https://github.com/tahayasincicek/File-Storage-and-Backup-System" target="_blank"
+                                rel="noopener" aria-label="File Storage &amp; Backup System — GitHub">
+                                <svg class="icon">
+                                    <use href="#i-github" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects-more">
+                    <a class="btn btn-primary btn-lg" href="https://github.com/tahayasincicek?tab=repositories"
+                        target="_blank" rel="noopener">
+                        <span data-i18n="projects.more">Daha Fazla Proje</span>
+                        <svg class="icon">
+                            <use href="#i-chevron-right" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 7. CONTACT ══ -->
+        <section id="contact" class="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <p class="eyebrow" data-i18n="contact.eyebrow">İletişim</p>
+                    <h2 class="contact-title" data-i18n="contact.title" data-i18n-html>Benimle <span
+                            class="accent">İletişime</span><br>Geçebilirsiniz</h2>
+                    <p class="contact-desc" data-i18n="contact.desc">
+                        Projelerim veya çalışmalarım hakkında merak ettiğiniz bir şey olursa formu doldurabilir ya da
+                        doğrudan e-posta ile yazabilirsiniz.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="contact.c1">Yazılım
+                                Mühendisliği öğrencisi</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="contact.c2">Full-Stack
+                                web geliştirme</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="contact.c3">Makine
+                                öğrenmesi ve derin öğrenme</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="contact.c4">Veri
+                                analizi</span></li>
+                        <li><svg class="icon">
+                                <use href="#i-check-circle" />
+                            </svg><span data-i18n="contact.c5">Mobil ve
+                                bilgisayarlı görü</span></li>
+                    </ul>
+
+                    <ul class="social-links social-links-lg">
+                        <li><a href="https://github.com/tahayasincicek" target="_blank" rel="noopener"
+                                aria-label="GitHub"><svg class="icon">
+                                    <use href="#i-github" />
+                                </svg></a></li>
+                        <li><a href="https://linkedin.com/in/taha-yasin-%C3%A7i%C3%A7ek-887b0927b" target="_blank"
+                                rel="noopener" aria-label="LinkedIn"><svg class="icon">
+                                    <use href="#i-linkedin" />
+                                </svg></a>
+                        </li>
+                        <li><a href="mailto:cicektahayasin46@gmail.com" aria-label="E-mail"><svg class="icon">
+                                    <use href="#i-mail" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+
+                <!--
+                  ⚠️  FORMU ÇALIŞTIRMAK İÇİN (Web3Forms — ücretsiz, hesap gerektirmez):
+                      1. https://web3forms.com adresine git
+                      2. E-posta adresini (cicektahayasin46@gmail.com) gir → "Create Access Key"
+                      3. E-postana gelen Access Key'i aşağıdaki
+                         name="access_key" value="YOUR_ACCESS_KEY" kısmındaki
+                         YOUR_ACCESS_KEY ile değiştir.
+                      Kurulum bitene kadar form gönderim yapmaz, uyarı gösterir.
+                -->
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms erişim anahtarı — YOUR_ACCESS_KEY yerine kendi anahtarını yaz -->
+                    <input type="hidden" name="access_key" value="726e5698-12da-4f47-ae17-3531b7ed87f1">
+                    <input type="hidden" name="from_name" value="Portföy İletişim Formu">
+                    <!-- Spam koruması (bot honeypot) — kullanıcı görmez -->
+                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"
+                        aria-hidden="true">
+                    <div class="field">
+                        <label for="name" data-i18n="contact.f.name">Ad Soyad</label>
+                        <input type="text" id="name" name="name" data-i18n-ph="contact.f.namePh"
+                            placeholder="Adın Soyadın" required>
+                    </div>
+                    <div class="field">
+                        <label for="email" data-i18n="contact.f.email">E-posta Adresi</label>
+                        <input type="email" id="email" name="email" data-i18n-ph="contact.f.emailPh"
+                            placeholder="ornek@mail.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone" data-i18n="contact.f.phone">Telefon Numarası</label>
+                        <input type="tel" id="phone" name="phone" data-i18n-ph="contact.f.phonePh"
+                            placeholder="+90 5XX XXX XX XX">
+                    </div>
+                    <div class="field">
+                        <label for="subject" data-i18n="contact.f.subject">Konu</label>
+                        <input type="text" id="subject" name="subject" data-i18n-ph="contact.f.subjectPh"
+                            placeholder="Konu">
+                    </div>
+                    <div class="field field-full">
+                        <label for="message" data-i18n="contact.f.message">Mesaj</label>
+                        <textarea id="message" name="message" data-i18n-ph="contact.f.messagePh"
+                            placeholder="Mesajını buraya yaz..." required></textarea>
+                    </div>
+
+                    <p class="form-status" id="formStatus" role="status"></p>
+
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <span data-i18n="contact.f.send">Mesajı Gönder</span>
+                        <svg class="icon">
+                            <use href="#i-send" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ 8. FOOTER ══ -->
+    <footer class="footer">
+        <a href="#home" class="scroll-up" aria-label="Yukarı / Top">
+            <svg class="icon">
+                <use href="#i-chevrons-up" />
+            </svg>
+        </a>
+        <div class="container footer-inner">
+            <p class="copyright" data-i18n="footer.copyright">Copyright © 2026, Taha Yasin Çiçek. Tüm hakları
+                saklıdır.</p>
+            <nav class="footer-links">
+                <a href="#about" data-i18n="nav.about">Hakkımda</a>
+                <a href="#services" data-i18n="nav.services">Çalışma Alanlarım</a>
+                <a href="#resume" data-i18n="nav.resume">Özgeçmiş</a>
+                <a href="#skills" data-i18n="nav.skills">Yetenekler</a>
+                <a href="#projects" data-i18n="nav.projects">Projeler</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

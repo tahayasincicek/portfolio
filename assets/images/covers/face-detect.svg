@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593 341" width="593" height="341" role="img"
+    aria-label="Gerçek zamanlı yüz tespiti yapan web uygulaması arayüzü">
+    <defs>
+        <clipPath id="f-scr"><rect x="58" y="43" width="477" height="252" /></clipPath>
+        <clipPath id="f-cam"><rect x="76" y="88" width="286" height="190" rx="8" /></clipPath>
+        <linearGradient id="f-scan" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2563eb" stop-opacity="0" />
+            <stop offset=".5" stop-color="#2563eb" stop-opacity=".9" />
+            <stop offset="1" stop-color="#2563eb" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+
+    <!-- ── laptop gövdesi ── -->
+    <rect x="47" y="6" width="499" height="300" rx="15" fill="#1c1c20" stroke="#3c3c44" />
+    <rect x="58" y="17" width="477" height="278" rx="5" fill="#ffffff" />
+
+    <!-- tarayıcı çubuğu -->
+    <path d="M58 22a5 5 0 0 1 5-5h467a5 5 0 0 1 5 5v21H58z" fill="#e8e9ed" />
+    <g fill="#b9bcc4">
+        <path d="M84 27.5l-5 5 5 5v-10z" /><path d="M100 27.5l5 5-5 5v-10z" />
+    </g>
+    <rect x="196" y="24" width="200" height="14" rx="7" fill="#ffffff" />
+    <circle cx="208" cy="31" r="3" fill="#9aa0aa" />
+    <rect x="217" y="29" width="88" height="4" rx="2" fill="#b9bcc4" />
+    <g fill="#b9bcc4">
+        <rect x="470" y="29" width="12" height="4" rx="2" /><rect x="492" y="29" width="12" height="4" rx="2" />
+    </g>
+
+    <!-- ── ekran içeriği ── -->
+    <g clip-path="url(#f-scr)">
+        <rect x="58" y="43" width="477" height="252" fill="#f4f5f8" />
+
+        <!-- başlık -->
+        <rect x="76" y="58" width="98" height="9" rx="4.5" fill="#2c2f36" />
+        <rect x="76" y="74" width="58" height="5" rx="2.5" fill="#b9bcc4" />
+        <rect x="446" y="56" width="72" height="18" rx="6" fill="#ffffff" />
+        <circle cx="459" cy="65" r="4" fill="#2563eb" />
+        <rect x="468" y="63" width="38" height="4" rx="2" fill="#8a8f99" />
+
+        <!-- kamera akışı -->
+        <rect x="76" y="88" width="286" height="190" rx="8" fill="#191920" />
+        <g clip-path="url(#f-cam)">
+            <!-- silüet -->
+            <g fill="#ffffff" fill-opacity=".15">
+                <circle cx="219" cy="158" r="32" />
+                <path d="M219 196c-33 0-58 20-64 54h128c-6-34-31-54-64-54z" />
+            </g>
+            <!-- yüz hatları -->
+            <g fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="2" stroke-linecap="round">
+                <path d="M206 152h9M223 152h9" />
+                <path d="M219 162v9h-6" />
+                <path d="M209 180q10 7 20 0" />
+            </g>
+            <!-- vizör köşeleri -->
+            <g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2" stroke-linecap="round">
+                <path d="M88 116v-14h14M350 116v-14h-14M88 250v14h14M350 250v14h-14" />
+            </g>
+            <!-- tarama çizgisi -->
+            <rect x="176" y="170" width="86" height="2" fill="url(#f-scan)" />
+        </g>
+
+        <!-- tespit kutusu -->
+        <rect x="176" y="118" width="86" height="104" fill="#2563eb" fill-opacity=".06" />
+        <g fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round">
+            <path d="M176 136v-18h18M262 136v-18h-18M176 204v18h18M262 204v18h-18" />
+        </g>
+        <!-- güven etiketi -->
+        <rect x="176" y="98" width="58" height="15" rx="4" fill="#2563eb" />
+        <rect x="184" y="103" width="34" height="5" rx="2.5" fill="#ffffff" fill-opacity=".9" />
+
+        <!-- canlı göstergesi -->
+        <circle cx="92" cy="104" r="4" fill="#2563eb" />
+        <rect x="102" y="101" width="26" height="5" rx="2.5" fill="#ffffff" fill-opacity=".45" />
+        <!-- kare hızı -->
+        <g fill="#ffffff" fill-opacity=".22">
+            <rect x="88" y="258" width="44" height="5" rx="2.5" />
+            <rect x="140" y="258" width="26" height="5" rx="2.5" />
+        </g>
+
+        <!-- sonuç paneli -->
+        <rect x="378" y="88" width="140" height="190" rx="8" fill="#ffffff" />
+        <rect x="392" y="104" width="64" height="6" rx="3" fill="#2c2f36" />
+
+        <!-- tespit satırı 1 (aktif) -->
+        <rect x="384" y="120" width="128" height="32" rx="7" fill="#2563eb" fill-opacity=".07" />
+        <rect x="392" y="126" width="20" height="20" rx="6" fill="#ffffff" />
+        <circle cx="402" cy="133" r="4" fill="#c9ccd4" />
+        <path d="M402 139c-5 0-8 3-9 8h18c-1-5-4-8-9-8z" fill="#c9ccd4" />
+        <rect x="420" y="129" width="44" height="5" rx="2.5" fill="#4a4f59" />
+        <rect x="420" y="139" width="28" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="480" y="131" width="26" height="10" rx="5" fill="#2563eb" />
+        <rect x="485" y="134" width="16" height="4" rx="2" fill="#ffffff" fill-opacity=".9" />
+
+        <!-- tespit satırı 2 -->
+        <rect x="392" y="164" width="20" height="20" rx="6" fill="#f4f5f8" />
+        <circle cx="402" cy="171" r="4" fill="#c9ccd4" />
+        <path d="M402 177c-5 0-8 3-9 8h18c-1-5-4-8-9-8z" fill="#c9ccd4" />
+        <rect x="420" y="167" width="52" height="5" rx="2.5" fill="#4a4f59" />
+        <rect x="420" y="177" width="24" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="480" y="169" width="26" height="10" rx="5" fill="#2563eb" fill-opacity=".16" />
+        <rect x="485" y="172" width="16" height="4" rx="2" fill="#2563eb" fill-opacity=".7" />
+
+        <!-- tespit satırı 3 -->
+        <rect x="392" y="202" width="20" height="20" rx="6" fill="#f4f5f8" />
+        <circle cx="402" cy="209" r="4" fill="#c9ccd4" />
+        <path d="M402 215c-5 0-8 3-9 8h18c-1-5-4-8-9-8z" fill="#c9ccd4" />
+        <rect x="420" y="205" width="38" height="5" rx="2.5" fill="#4a4f59" />
+        <rect x="420" y="215" width="32" height="4" rx="2" fill="#b9bcc4" />
+        <rect x="480" y="207" width="26" height="10" rx="5" fill="#2563eb" fill-opacity=".16" />
+        <rect x="485" y="210" width="16" height="4" rx="2" fill="#2563eb" fill-opacity=".7" />
+
+        <!-- işlem düğmesi -->
+        <rect x="392" y="240" width="112" height="26" rx="7" fill="#2563eb" />
+        <rect x="422" y="251" width="52" height="4" rx="2" fill="#ffffff" />
+    </g>
+
+    <!-- ── taban ── -->
+    <path d="M22 306h549l-12 15H34z" fill="#9b9da5" />
+    <path d="M22 306h549l-2 3H24z" fill="#c3c5cc" />
+    <rect x="272" y="306" width="49" height="5" rx="2.5" fill="#7c7e86" />
+</svg>
