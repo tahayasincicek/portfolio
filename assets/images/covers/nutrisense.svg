@@ -4,8 +4,8 @@
     <clipPath id="n-scr"><rect x="228" y="26" width="137" height="289" rx="14"/></clipPath>
   </defs>
 
-  <!-- Telefon %15 büyütülüp yukarı çekildi; alt kenar kapak alanının dışına taşar. -->
-  <g transform="translate(296.5,4) scale(1.15) translate(-296.5,-19)">
+  <!-- Telefon kapak alanına tam sığacak şekilde ölçeklendi (taşma yok). -->
+  <g transform="translate(296.5,6.9) scale(1.08) translate(-296.5,-19)">
     <!-- gövde -->
     <rect x="221" y="19" width="151" height="303" rx="22" fill="#1c1c20" stroke="#3c3c44"/>
     <rect x="228" y="26" width="137" height="289" rx="14" fill="#0b1210"/>
